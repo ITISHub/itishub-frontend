@@ -12,7 +12,7 @@ import Vue from 'vue'
 export default Vue.extend({
   data() {
     return {
-      greeting: "Let's begin! init"
+      greeting: "Let's begin!"
     }
   },
   methods: {
