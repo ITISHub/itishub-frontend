@@ -10,3 +10,5 @@ Frontend part of ITIS-hub app.
 * [Boostrap-Vue Documentation](https://bootstrap-vue.org/)
 * [Vue.js Documentation](https://vuejs.org/v2/guide/)
 * [Nuxt.js Documentation](https://ru.nuxtjs.org/guide)
+### Figma
+* [Layouts](https://www.figma.com/file/ZUOg34TnNrrcz21H1WjxeC/ITIS-hub?node-id=0%3A1)

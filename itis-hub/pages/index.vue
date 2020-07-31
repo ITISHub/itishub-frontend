@@ -42,4 +42,8 @@ export default Vue.extend({
   .greetingButton:focus {
     outline: none;
   }
+
+  .greetingButton:hover {
+    display: none;
+  }
 </style>
