@@ -1,49 +1,21 @@
 <template>
-  <div class="container">
-    <button @click="showMesage(greeting)" class="greetingButton">
-      Say some greetings
-    </button>
+  <div class="content-container">
+    <HeaderBar />
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
+import HeaderBar from "~/components/HeaderBar.vue";
 
 export default Vue.extend({
+  components: {HeaderBar},
   data() {
     return {
-      greeting: "Let's begin!"
     }
   },
-  methods: {
-    showMesage(mesage: string): void {
-      alert(mesage)
-    }
-  }
 })
 </script>
 
 <style>
-  .container {
-    display: grid;
-    place-items: center;
-    height: 100vh;
-  }
-
-  .greetingButton {
-    width: 200px;
-    height: 50px;
-    border-radius: 10px;
-    background-color: green;
-    color: white;
-    border: 2px solid blueviolet;
-  }
-
-  .greetingButton:focus {
-    outline: none;
-  }
-
-  .greetingButton:hover {
-    display: none;
-  }
 </style>
