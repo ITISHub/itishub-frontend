@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&display=swap');
 
-* {
+:root {
+  --bg_color: #fff;
+  --color: #000;
+  --border_color: #000;
+}
+
+.dark-mode {
+  --bg_color: #282C35;
+  --color: #fff;
+  --border_color: #fff;
+}
+
+body {
   font-family: 'Comfortaa', sans-serif;
+  background-color: var(--bg_color);
+  color: var(--color);
+  transition: background-color 0.5s;
 }

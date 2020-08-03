@@ -1,4 +1,3 @@
-
 export default {
   /*
   ** Nuxt rendering mode
@@ -47,6 +46,8 @@ export default {
   */
   buildModules: [
     '@nuxt/typescript-build',
+    '@nuxtjs/vuetify',
+    '@nuxtjs/color-mode',
   ],
   /*
   ** Nuxt.js modules
