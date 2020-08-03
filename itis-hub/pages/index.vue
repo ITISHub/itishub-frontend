@@ -1,13 +1,12 @@
 <template>
   <div class="content-container">
-    <HeaderBar />
     <v-container class="greeting">
       <h1>Здесь мы ботаем...</h1>
       <p class="description">На сайте есть разборы теоретических и практических
         задач первого курса ИТИСа, конспекты и прочие полезные материалы
       </p>
     </v-container>
-    <MainContent />
+    <MainContent class="mb-3"/>
   </div>
 </template>
 

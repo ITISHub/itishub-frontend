@@ -26,7 +26,7 @@
     place-items: center;
     background-color: #385F73;
     /*background-image: url("https://i.redd.it/73whdvrvhl111.jpg");*/
-    /*background: #385F73 url("~assets/card-images/about.jpg") no-repeat;*/
+    /*background: #385F73 url("~assets/card-images/about.jpg");*/
   }
 
   .card-title {
@@ -34,5 +34,10 @@
     font-size: 20px;
     color: white;
     text-align: center;
+  }
+
+  .card-container:hover {
+    transition: 0.5s;
+    background-color: #4789a2;
   }
 </style>

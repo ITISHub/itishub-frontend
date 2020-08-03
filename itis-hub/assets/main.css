@@ -4,12 +4,14 @@
   --bg_color: #fff;
   --color: #000;
   --border_color: #000;
+  --footer_color: #e9eaeB;
 }
 
 .dark-mode {
   --bg_color: #282C35;
   --color: #fff;
   --border_color: #fff;
+  --footer_color: #1a1a1a;
 }
 
 body {
@@ -23,6 +25,15 @@ body {
   border: 1px solid var(--border_color);
 }
 
+.footer {
+  background-color: var(--footer_color);
+  color: var(--color);
+}
+
 a:hover {
   text-decoration: none;
+}
+
+button:hover {
+  outline: none;
 }

@@ -38,7 +38,8 @@ export default {
 
 <style scoped>
   .container {
-    height: 60px;
+    padding: 10px 20px 0 20px;
+    height: 70px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
