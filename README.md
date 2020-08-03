@@ -1,4 +1,4 @@
-# frontend :moyai:
+# frontend  :rainbow_flag:
 Frontend part of ITIS-hub app.
 ### Stack: 
 - Vue.js 2.6.11
