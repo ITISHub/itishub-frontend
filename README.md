@@ -9,7 +9,7 @@ Frontend part of ITIS-hub app.
 
 ### Useful links:
 * [Boostrap-Vue Documentation](https://bootstrap-vue.org/)
-* [Vuetify Documentation] (https://vuetifyjs.com/ru/getting-started/quick-start/)
+* [Vuetify Documentation](https://vuetifyjs.com/ru/getting-started/quick-start/)
 * [Vue.js Documentation](https://vuejs.org/v2/guide/)
 * [Nuxt.js Documentation](https://ru.nuxtjs.org/guide)
 ### Figma
