@@ -17,7 +17,7 @@
         <v-col class="social-media">
           <p class="links-title">мы в соц. сетях</p>
           <div class="mr-2 mt-n3">
-            <v-btn icon>
+            <v-btn icon href="https://www.youtube.com/channel/UCGLOsuM-8wVEgjGUVIq4taQ" target="_blank">
               <img src="~assets/icons/youtube.svg" alt="youtube" height="42">
             </v-btn>
             <v-btn icon>
