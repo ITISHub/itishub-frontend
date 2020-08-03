@@ -7,14 +7,21 @@
         задач первого курса ИТИСа, конспекты и прочие полезные материалы
       </p>
     </v-container>
+    <MainContent />
   </div>
 </template>
 
 <script>
 import HeaderBar from "~/components/HeaderBar.vue";
+import CardContent from "../components/CardContent";
+import MainContent from "../components/MainContent";
 
 export default {
-  components: {HeaderBar},
+  components: {
+    MainContent,
+    CardContent,
+    HeaderBar,
+  },
   data() {
     return {}
   },

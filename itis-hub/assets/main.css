@@ -18,3 +18,11 @@ body {
   color: var(--color);
   transition: background-color 0.5s;
 }
+
+.card-container {
+  border: 1px solid var(--border_color);
+}
+
+a:hover {
+  text-decoration: none;
+}
