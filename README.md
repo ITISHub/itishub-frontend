@@ -1,4 +1,4 @@
-# frontend :mage:
+# frontend :art:
 Frontend part of ITIS-hub app.
 ### Stack: 
 - Vue.js 2.6.11
