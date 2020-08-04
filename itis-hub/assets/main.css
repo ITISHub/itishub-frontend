@@ -28,6 +28,7 @@ body {
 .footer {
   background-color: var(--footer_color);
   color: var(--color);
+  transition: background-color 0.5s;
 }
 
 a:hover {
