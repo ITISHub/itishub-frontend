@@ -1,10 +1,12 @@
 <template>
-  <div class="content">
+  <v-app id="application">
+    <div class="content">
       <HeaderBar />
       <Nuxt class="container"/>
-      <div class="spacer"></div>
+      <!--<div class="spacer"></div>-->
       <FooterBar />
-  </div>
+    </div>
+  </v-app>
 </template>
 
 <script>
@@ -22,7 +24,7 @@
 
   /*optimised for iPad's and for other tablets
     костыль тот еще 0_о */
-  .spacer {
-    min-height: calc(31vh - 200px);
-  }
+  /*.spacer {*/
+  /*  min-height: calc(31vh - 200px);*/
+  /*}*/
 </style>

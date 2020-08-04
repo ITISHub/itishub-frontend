@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" app>
     <h3 class="logo-text">ITIS-hub</h3>
     <div class="current-section"></div>
     <v-btn

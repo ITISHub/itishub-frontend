@@ -14,7 +14,7 @@
   --footer_color: #1a1a1a;
 }
 
-body {
+#application, #feedback-form {
   font-family: 'Comfortaa', sans-serif;
   background-color: var(--bg_color);
   color: var(--color);
@@ -25,7 +25,7 @@ body {
   border: 1px solid var(--border_color);
 }
 
-.footer {
+#footer {
   background-color: var(--footer_color);
   color: var(--color);
   transition: background-color 0.5s;

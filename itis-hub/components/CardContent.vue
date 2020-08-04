@@ -21,7 +21,7 @@
 <style scoped>
   .card-container {
     height: 300px;
-    border-radius: 20px !important;
+    border-radius: 15px !important;
     display: grid;
     place-items: center;
     background-color: #385F73;

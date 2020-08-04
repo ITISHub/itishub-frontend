@@ -1,57 +1,72 @@
 <template>
-  <div class="footer">
-      <v-row class="footer-container">
-        <v-col class="feedback">
-          <h4>На связи</h4>
-          <p>Нашли баг  или хотите
-            с нами связаться? Пишите!
-          </p>
-          <v-btn
-            color="#33aade"
-            depressed
-            class="write-button"
-          >
-            написать
+  <!--still have a problem with position of footer (absolute or default 0_o ?)-->
+  <v-footer id="footer">
+    <v-row class="footer-container">
+      <v-col class="feedback">
+        <h4>На связи</h4>
+        <p>Нашли баг  или хотите
+          с нами связаться? Пишите!
+        </p>
+        <v-btn
+          color="#33aade"
+          depressed
+          class="write-button"
+          @click="feedbackDialog = !feedbackDialog"
+        >
+          написать
+        </v-btn>
+        <v-dialog
+          v-model="feedbackDialog"
+          max-width="400"
+        >
+          <FormDialog @close-form="closeForm"/>
+        </v-dialog>
+      </v-col>
+      <v-col class="social-media">
+        <p class="links-title">мы в соц. сетях</p>
+        <div class="mr-2 mt-n3">
+          <v-btn icon href="https://www.youtube.com/channel/UCGLOsuM-8wVEgjGUVIq4taQ" target="_blank">
+            <img src="~assets/icons/youtube.svg" alt="youtube" height="42">
           </v-btn>
-        </v-col>
-        <v-col class="social-media">
-          <p class="links-title">мы в соц. сетях</p>
-          <div class="mr-2 mt-n3">
-            <v-btn icon href="https://www.youtube.com/channel/UCGLOsuM-8wVEgjGUVIq4taQ" target="_blank">
-              <img src="~assets/icons/youtube.svg" alt="youtube" height="42">
-            </v-btn>
-            <v-btn icon>
-              <img src="~assets/icons/vk.svg" alt="vk" height="30">
-            </v-btn>
-            <v-btn icon>
-              <img src="~assets/icons/telegram.svg" alt="telegram" height="30">
-            </v-btn>
-          </div>
-          <p class="links-title">oбщайтесь и пишите <br> код вместе с нами</p>
-          <div class="mr-2 mt-n3">
-            <v-btn icon>
-              <img src="~assets/icons/discord.svg" alt="discord" height="40">
-            </v-btn>
-            <v-btn icon>
-              <img src="~assets/icons/github.svg" alt="github" height="36">
-            </v-btn>
-          </div>
-        </v-col>
-      </v-row>
-    <v-card-text class="py-2 white--text text-center">
+          <v-btn icon>
+            <img src="~assets/icons/vk.svg" alt="vk" height="30">
+          </v-btn>
+          <v-btn icon>
+            <img src="~assets/icons/telegram.svg" alt="telegram" height="30">
+          </v-btn>
+        </div>
+        <p class="links-title">oбщайтесь и пишите <br> код вместе с нами</p>
+        <div class="mr-2 mt-n3">
+          <v-btn icon>
+            <img src="~assets/icons/discord.svg" alt="discord" height="40">
+          </v-btn>
+          <v-btn icon href="https://github.com/ITISHub" target="_blank">
+            <img src="~assets/icons/github.svg" alt="github" height="36">
+          </v-btn>
+        </div>
+      </v-col>
+    </v-row>
+    <v-card-text class="py-2 text-center">
       <strong>ITIS-hub</strong> — {{ new Date().getFullYear() }}
     </v-card-text>
-  </div>
+  </v-footer>
 </template>
 
 <script>
+import FormDialog from "./FormDialog";
 export default {
     name: "FooterBar",
-    data () {
+  components: {FormDialog},
+  data () {
       return {
-
+        feedbackDialog: false,
       }
-    }
+    },
+  methods: {
+      closeForm () {
+        this.feedbackDialog = false;
+      }
+  }
 }
 </script>
 
