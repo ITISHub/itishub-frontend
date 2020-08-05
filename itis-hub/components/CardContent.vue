@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="link">
+  <nuxt-link :to="link" @click="">
     <v-card
       class="card-container"
     >
@@ -14,6 +14,7 @@
     props: {
       title: String,
       link: String,
+      event: String,
     }
   }
 </script>
@@ -21,11 +22,13 @@
 <style scoped>
   .card-container {
     height: 300px;
-    border-radius: 15px !important;
+    /*border-radius: 15px !important;*/
     display: grid;
     place-items: center;
     background-color: #385F73;
+    transition: all 0.5s;
     /*background-image: url("https://i.redd.it/73whdvrvhl111.jpg");*/
+    border-radius: 10px !important;
     /*background: #385F73 url("~assets/card-images/about.jpg");*/
   }
 
@@ -37,7 +40,8 @@
   }
 
   .card-container:hover {
-    transition: 0.5s;
     background-color: #4789a2;
+    border-radius: 25px !important;
+    /*box-shadow: 0 0 20px black;*/
   }
 </style>

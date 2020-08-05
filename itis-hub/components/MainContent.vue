@@ -1,6 +1,6 @@
 <template>
     <v-container class="content-container">
-      <CardContent title="разборы теории" link="/"/>
+      <CardContent title="разборы теории" link="/disciplines"/>
       <CardContent title="разборы практики" link="/"/>
       <CardContent title="о нас" link="/"/>
       <CardContent title="стримы Урала" link="/"/>
