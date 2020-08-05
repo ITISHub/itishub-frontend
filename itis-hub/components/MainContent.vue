@@ -1,10 +1,10 @@
 <template>
     <v-container class="content-container">
-      <CardContent title="разборы теории"/>
-      <CardContent title="разборы практики"/>
-      <CardContent title="о нас"/>
-      <CardContent title="стримы Урала"/>
-      <CardContent title="coming soon"/>
+      <CardContent title="разборы теории" link="/"/>
+      <CardContent title="разборы практики" link="/"/>
+      <CardContent title="о нас" link="/"/>
+      <CardContent title="стримы Урала" link="/"/>
+      <CardContent title="coming soon" link="/"/>
     </v-container>
 </template>
 
