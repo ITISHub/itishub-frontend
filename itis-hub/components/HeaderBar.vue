@@ -18,9 +18,8 @@
           </v-btn>
         </template>
         <v-list>
-          <nuxt-link to="/">
+          <nuxt-link v-for="page in pages" to="/">
             <v-list-item
-              v-for="page in pages"
               color="#1a1a1a"
               @click=""
             >
