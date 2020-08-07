@@ -1,17 +1,16 @@
 <template>
   <v-container class="content-container">
-    <CardContent title="матанализ" link="/"/>
-    <CardContent title="дискретка" link="/discrete-math-theory"/>
-    <CardContent title="алгем" link="/"/>
-<!--    <CardContent link="/" title="главное меню"/>-->
+    <NavigationCard title="матанализ" link="/disciplines"/>
+    <NavigationCard title="дискретка" link="/discrete-math-theory"/>
+    <NavigationCard title="алгем" link="/disciplines"/>
   </v-container>
 </template>
 
 <script>
-import CardContent from "./CardContent";
+import NavigationCard from "./NavigationCard";
 export default {
     name: "DisciplineSelect",
-  components: {CardContent}
+  components: {NavigationCard}
 }
 </script>
 

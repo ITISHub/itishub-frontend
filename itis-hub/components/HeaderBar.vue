@@ -18,12 +18,11 @@
           </v-btn>
         </template>
         <v-list>
-          <nuxt-link v-for="page in pages" to="/">
+          <nuxt-link v-for="page in pages" :to="page.link">
             <v-list-item
               color="#1a1a1a"
-              @click=""
             >
-              <v-list-item-title>{{ page }}</v-list-item-title>
+              <v-list-item-title>{{ page.name }}</v-list-item-title>
             </v-list-item>
           </nuxt-link>
         </v-list>
@@ -47,7 +46,11 @@ export default {
   data () {
     return {
       switch1: true,
-      pages: ['main', 'disciplines', 'about']
+      pages: [
+          { name: 'главная', link: '/'},
+          { name: 'предметы', link: '/disciplines'},
+          { name: 'о нас', link: '/about'},
+        ]
     }
   },
   // need to move all logic to the vuex (do with using mutations and actions)

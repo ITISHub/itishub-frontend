@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="link" @click="">
+  <nuxt-link :to="link">
     <v-card
       class="card-container"
     >
@@ -10,7 +10,7 @@
 
 <script>
   export default {
-    name: "CardContent",
+    name: "NavigationCard",
     props: {
       title: String,
       link: String,

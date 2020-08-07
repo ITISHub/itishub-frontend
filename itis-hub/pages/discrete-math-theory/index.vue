@@ -8,25 +8,34 @@
     </v-container>
     <div class="info-container mb-5">
 
-        <CardContent
+        <a
           v-for="theme in themes"
-          :title="theme"
-          link="/"
-        />
-      </div>
-  </v-container>
+          @click="openTheme(theme.name)"
+        >
+          <DynamicCard :title="theme.name"/>
+        </a>
+    </div>
+    </v-container>
 </template>
 
 <script>
-    import CardContent from "../components/CardContent";
+    import DynamicCard from "../../components/DynamicCard";
     export default {
-      name: "discrete-math",
-      components: {CardContent},
+      name: "discrete-math-theory",
+      components: {DynamicCard},
       data () {
         return {
-          themes: ['Теорема Кантора', 'СДНФ, СКНФ', 'Метод Блейка',
-            'Метод Квайна', 'Метод Нельсона', 'Полином Жегалкина',
-            'Классы Поста', 'T0, T1, M, S', ]
+          // динамический роутинг работает, но в пути кириллица 0_о
+          themes: [
+            {name: 'Теорема Кантора', link: 'kantor-theory'},
+            {name: 'Метод Блейка', link: 'blake-method'},
+            {name: 'Метод Нельсона', link: 'nelson-method'}
+          ]
+        }
+      },
+      methods: {
+        openTheme(theme) {
+          this.$router.push('/discrete-math-theory/' + theme);
         }
       }
     }

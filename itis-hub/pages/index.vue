@@ -12,7 +12,7 @@
 
 <script>
 import HeaderBar from "~/components/HeaderBar.vue";
-import CardContent from "../components/CardContent";
+import CardContent from "../components/NavigationCard";
 import MainContent from "../components/MainContent";
 
 export default {

@@ -1,18 +1,18 @@
 <template>
     <v-container class="content-container">
-      <CardContent title="разборы теории" link="/disciplines"/>
-      <CardContent title="разборы практики" link="/"/>
-      <CardContent title="о нас" link="/"/>
-      <CardContent title="стримы Урала" link="/"/>
-      <CardContent title="coming soon" link="/"/>
+      <NavigationCard title="разборы теории" link="/disciplines"/>
+      <NavigationCard title="разборы практики" link="/"/>
+      <NavigationCard title="о нас" link="/about"/>
+      <NavigationCard title="стримы Урала" link="/"/>
+      <NavigationCard title="coming soon" link="/"/>
     </v-container>
 </template>
 
 <script>
-    import CardContent from "./CardContent";
+    import NavigationCard from "./NavigationCard";
     export default {
         name: "MainContent",
-      components: {CardContent}
+      components: {NavigationCard}
     }
 </script>
 
