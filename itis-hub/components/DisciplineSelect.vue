@@ -1,8 +1,9 @@
 <template>
   <v-container class="content-container">
     <CardContent title="матанализ" link="/"/>
-    <CardContent title="дискретка" link="/"/>
+    <CardContent title="дискретка" link="/discrete-math-theory"/>
     <CardContent title="алгем" link="/"/>
+<!--    <CardContent link="/" title="главное меню"/>-->
   </v-container>
 </template>
 

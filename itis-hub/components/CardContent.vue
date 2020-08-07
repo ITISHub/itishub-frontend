@@ -21,7 +21,7 @@
 
 <style scoped>
   .card-container {
-    height: 300px;
+    height: 280px;
     /*border-radius: 15px !important;*/
     display: grid;
     place-items: center;
@@ -30,6 +30,12 @@
     /*background-image: url("https://i.redd.it/73whdvrvhl111.jpg");*/
     border-radius: 10px !important;
     /*background: #385F73 url("~assets/card-images/about.jpg");*/
+  }
+
+  @media screen and (max-width: 464px) {
+    .card-container {
+      height: 150px;
+    }
   }
 
   .card-title {
@@ -41,7 +47,7 @@
 
   .card-container:hover {
     background-color: #4789a2;
-    border-radius: 25px !important;
+    /*border-radius: 25px !important;*/
     /*box-shadow: 0 0 20px black;*/
   }
 </style>

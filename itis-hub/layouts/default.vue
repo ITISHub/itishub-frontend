@@ -3,7 +3,7 @@
     <div class="content">
       <HeaderBar />
       <Nuxt class="container"/>
-      <!--<div class="spacer"></div>-->
+<!--      <div class="spacer"></div>-->
       <FooterBar />
     </div>
   </v-app>

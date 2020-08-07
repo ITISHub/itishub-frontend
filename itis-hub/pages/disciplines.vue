@@ -12,10 +12,10 @@
 
 <script>
     export default {
-        name: "disciplines"
+        name: "disciplines",
+        transitions: 'disciplines'
     }
 </script>
 
 <style scoped>
-
 </style>
