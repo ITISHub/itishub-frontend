@@ -36,10 +36,11 @@ a:hover {
   text-decoration: none;
 }
 
-button:hover {
-  outline: none;
+.developer-image {
+  border: 3px solid white;
 }
 
+/* page-animations */
 .page-enter-active,
 .page-leave-active {
   transition: opacity 0.3s;
