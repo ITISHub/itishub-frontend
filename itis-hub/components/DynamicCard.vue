@@ -2,7 +2,7 @@
     <v-card
       class="card-container"
     >
-      <p class="card-title"> {{ title }}</p>
+      <p class="card-title"> {{title}} </p>
     </v-card>
 </template>
 
@@ -19,7 +19,8 @@
 
 <style scoped>
   .card-container {
-    height: 280px;
+    padding: 15px;
+    min-height: 280px;
     /*border-radius: 15px !important;*/
     display: grid;
     place-items: center;
@@ -32,15 +33,16 @@
 
   @media screen and (max-width: 464px) {
     .card-container {
-      height: 150px;
+      min-height: 150px;
     }
   }
 
   .card-title {
-    max-width: 150px;
-    font-size: 20px;
+    word-wrap: break-word;
+    font-size: 15px;
     color: white;
     text-align: center;
+    word-break: normal;
   }
 
   .card-container:hover {

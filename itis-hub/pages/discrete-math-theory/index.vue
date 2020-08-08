@@ -2,9 +2,11 @@
   <v-container class="content-container">
     <v-container class="greeting">
       <h1 class="mb-3">Дискретная математика</h1>
-      <p class="description">практика
-      </p>
+      <p class="description">теория</p>
       <h4>темы:</h4>
+      <template v-if="themes.length === 0">
+        <p class="in-development">контент в разработке</p>
+      </template>
     </v-container>
     <div class="info-container mb-5">
 
@@ -30,7 +32,6 @@
           themes: [
             {name: 'Теорема Кантора', link: 'kantor-theory'},
             {name: 'Метод Блейка', link: 'blake-method'},
-            {name: 'Метод Нельсона', link: 'nelson-method'},
           ]
         }
       },

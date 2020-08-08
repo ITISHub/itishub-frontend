@@ -53,7 +53,15 @@ button:hover {
 .layout-leave-active {
   transition: opacity 0.3s;
 }
+
 .layout-enter,
 .layout-leave-active {
   opacity: 0;
+}
+
+.in-development {
+  height: 35vh;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
 }

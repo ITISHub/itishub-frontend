@@ -1,8 +1,8 @@
 <template>
   <v-container class="content-container">
-    <NavigationCard title="матанализ" link="/disciplines"/>
+    <NavigationCard title="матанализ" link="/math-analysis-theory"/>
     <NavigationCard title="дискретка" link="/discrete-math-theory"/>
-    <NavigationCard title="алгем" link="/disciplines"/>
+    <NavigationCard title="алгем" link="/algem-theory"/>
   </v-container>
 </template>
 

@@ -3,7 +3,7 @@
     <v-card
       class="card-container"
     >
-      <p class="card-title"> {{ title }}</p>
+      <p class="card-title" style="text-align: center; word-break: keep-all"> {{ title }}</p>
     </v-card>
   </nuxt-link>
 </template>
