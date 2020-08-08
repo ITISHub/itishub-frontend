@@ -10,6 +10,7 @@
 
         <a
           v-for="theme in themes"
+          :key="theme.link"
           @click="openTheme(theme.name)"
         >
           <DynamicCard :title="theme.name"/>
@@ -29,13 +30,13 @@
           themes: [
             {name: 'Теорема Кантора', link: 'kantor-theory'},
             {name: 'Метод Блейка', link: 'blake-method'},
-            {name: 'Метод Нельсона', link: 'nelson-method'}
+            {name: 'Метод Нельсона', link: 'nelson-method'},
           ]
         }
       },
       methods: {
-        openTheme(theme) {
-          this.$router.push('/discrete-math-theory/' + theme);
+        openTheme(name) {
+          this.$router.push('/discrete-math-theory/' + name);
         }
       }
     }
