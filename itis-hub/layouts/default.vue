@@ -19,7 +19,7 @@
 
 <style>
   .container {
-    max-width: 800px;
+    max-width: 700px;
   }
 
   /*optimised for iPad's and for other tablets
