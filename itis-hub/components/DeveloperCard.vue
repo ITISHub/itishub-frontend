@@ -1,7 +1,7 @@
 <template>
   <div class="developer-content">
 
-    <div class="test-developer">
+    <div class="test-developer mr-2 mt-n1">
       <div class="child mt-n3 ml-n3" :style="{'background-image': 'url(' + 'http://localhost:1337' +  image + ')' }"></div>
     </div>
 

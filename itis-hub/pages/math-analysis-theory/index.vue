@@ -1,7 +1,7 @@
 <template>
   <v-container class="content-container">
     <v-container class="greeting">
-      <h1 class="mb-3">Математический анализ</h1>
+      <h1 class="mb-3 discipline-title">Математический анализ</h1>
       <p class="description">
         теория
       </p>
@@ -70,5 +70,11 @@
 
   .info-container a {
     margin: 5px;
+  }
+
+  @media screen and (max-width: 431px){
+      .discipline-title {
+        font-size: 25px;
+      }
   }
 </style>
