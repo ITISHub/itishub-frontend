@@ -2,7 +2,7 @@
   <div class="developer-content">
 
     <div class="test-developer">
-      <div class="child mt-n3 ml-n3" :style="{'background-image': 'url(' + require('~/assets/card-images/developers/' + image) + ')' }"></div>
+      <div class="child mt-n3 ml-n3" :style="{'background-image': 'url(' + 'http://localhost:1337' +  image + ')' }"></div>
     </div>
 
     <div class="developer-info">

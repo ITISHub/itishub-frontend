@@ -8,9 +8,9 @@
       <DeveloperCard
         v-for="developer in developers"
         :key=developer.name
-        :name=developer.name
-        :duties=developer.duties
-        :image=developer.image
+        :name="developer.name + ' ' + developer.surname"
+        :duties=developer.about
+        :image=developer.avatar
         :github=developer.github
         :telegram=developer.telegram
         :vk=developer.vk
@@ -20,29 +20,20 @@
 </template>
 
 <script>
-    import DeveloperCard from "../components/DeveloperCard";
-    export default {
-        name: "about",
-      components: {DeveloperCard},
-      data () {
-          return {
-            developers: [
-              {
-                name: 'Elon Musk',
-                image: 'marat.jpg',
-                duties: 'content',
-                github: 'https://github.com/',
-                telegram: 'https://telegram.org/',
-                vk: 'https://vk.com/'
-              },
-            ]
-          };
-        },
+  import DeveloperCard from "../components/DeveloperCard";
+  export default {
+      name: "about",
+    components: {DeveloperCard},
+    data () {
+        return {
+          developers: []
+        };
+      },
       async created() {
         const response = await fetch('http://127.0.0.1:1337/api/v1/creators/');
-        this.developers = await response.json()      
-      }  
-    }
+        this.developers = await response.json()
+      }
+  }
 </script>
 
 <style scoped>
