@@ -35,25 +35,13 @@
                 telegram: 'https://telegram.org/',
                 vk: 'https://vk.com/'
               },
-              {
-                name: 'Elon Musk',
-                image: 'marat.jpg',
-                duties: 'content',
-                github: 'https://github.com/',
-                telegram: 'https://telegram.org/',
-                vk: 'https://vk.com/'
-              },
-              {
-                name: 'Elon Musk',
-                image: 'marat.jpg',
-                duties: 'content',
-                github: 'https://github.com/',
-                telegram: 'https://telegram.org/',
-                vk: 'https://vk.com/'
-              },
             ]
-          }
-        }
+          };
+        },
+      async created() {
+        const response = await fetch('http://127.0.0.1:1337/api/v1/creators/');
+        this.developers = await response.json()      
+      }  
     }
 </script>
 
