@@ -1,6 +1,10 @@
 <template>
   <div class="developer-content">
-    <img :src="require(`~/assets/card-images/developers/${image}`)" alt="developer" class="developer-image">
+
+    <div class="test-developer">
+      <div class="child mt-n3 ml-n3" :style="{'background-image': 'url(' + require('~/assets/card-images/developers/' + image) + ')' }"></div>
+    </div>
+
     <div class="developer-info">
       <h4 class="developer-name"> {{ name }} </h4>
       <p> {{ duties }} </p>
@@ -55,4 +59,40 @@ export default {
   .developer-name {
     white-space: nowrap;
   }
+
+  .test-developer {
+    width: 100px;
+    height: 100px;
+    border: 3px white solid;
+    border-radius: 15px;
+    transition: all 0.3s;
+    transform: rotate(-20deg);
+    overflow: hidden;
+  }
+
+  .test-developer:hover {
+    transform: rotate(0deg) translate(20px, 10px);
+  }
+
+  .child {
+    transition: all 0.3s;
+    transform: rotate(20deg);
+    background-size: cover;
+    width: 125%;
+    height: 125%;
+  }
+
+  .child:hover {
+    transform: rotate(0deg);
+  }
+
+  @media screen and (max-width: 568px){
+    .child:hover {
+      transform: rotate(20deg);
+    }
+    .test-developer:hover {
+      transform: rotate(-20deg);
+    }
+  }
+
 </style>

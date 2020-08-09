@@ -35,6 +35,22 @@
                 telegram: 'https://telegram.org/',
                 vk: 'https://vk.com/'
               },
+              {
+                name: 'Elon Musk',
+                image: 'marat.jpg',
+                duties: 'content',
+                github: 'https://github.com/',
+                telegram: 'https://telegram.org/',
+                vk: 'https://vk.com/'
+              },
+              {
+                name: 'Elon Musk',
+                image: 'marat.jpg',
+                duties: 'content',
+                github: 'https://github.com/',
+                telegram: 'https://telegram.org/',
+                vk: 'https://vk.com/'
+              },
             ]
           }
         }
