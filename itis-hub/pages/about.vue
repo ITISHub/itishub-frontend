@@ -29,7 +29,6 @@
           developers: []
         };
       },
-      // 0_o
       async created() {
         const response = await fetch('http://127.0.0.1:1337/api/v1/creators/');
         this.developers = await response.json()
@@ -40,20 +39,26 @@
 <style scoped>
   .about-wrapper {
     margin: 0 auto;
-    max-width: 700px;
+    max-width: 450px;
     text-align: center;
+  }
+
+  @media screen and (max-width: 568px){
+    .about-wrapper {
+      max-width: 300px;
+    }
   }
 
   .developers {
     min-height: 400px;
     padding: 15px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-column-gap: 15px;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .developers div {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    justify-self: center;
   }
 </style>
