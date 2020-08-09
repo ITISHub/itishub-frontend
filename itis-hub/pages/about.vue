@@ -29,6 +29,7 @@
           developers: []
         };
       },
+      // 0_o
       async created() {
         const response = await fetch('http://127.0.0.1:1337/api/v1/creators/');
         this.developers = await response.json()
