@@ -18,7 +18,7 @@
     </v-card-title>
 
     <v-card-text>
-      <v-form class="form-inputs">
+      <v-form class="form-inputs" v-model="isValid" ref="form">
         <!--another bad solution, need to refactor this-->
         <template v-if="$nuxt.$colorMode.preference === 'light'">
           <v-text-field
@@ -28,6 +28,7 @@
             placeholder="email"
             outlined
             dense
+            :rules="emailRules"
           >
           </v-text-field>
           <v-textarea
@@ -37,6 +38,7 @@
             v-model="text"
             outlined
             auto-grow
+            :rules="requiredRules"
           >
           </v-textarea>
         </template>
@@ -49,6 +51,7 @@
             outlined
             dark
             dense
+            :rules="emailRules"
           >
           </v-text-field>
           <v-textarea
@@ -59,6 +62,7 @@
             outlined
             dark
             auto-grow
+            :rules="requiredRules"
           >
           </v-textarea>
         </template>
@@ -69,8 +73,8 @@
       <v-btn
         color="#33aade"
         depressed
-        class="write-button mt-n11"
-        @click="sendReview"
+        class="write-button mt-n7"
+        @click="validateForm"
       >
         отправить
       </v-btn>
@@ -84,15 +88,29 @@
         data() {
             return {
                 email:'',
-                text:''
+                text:'',
+                isValid: false,
+                emailRules: [
+                  v => !v || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'неверный email',
+                  (v) => !!v
+                ],
+                requiredRules: [(v) => !!v || 'не молчите :)']
             }
         },
         methods: {
+            validateForm () {
+              if (this.isValid) {
+                this.sendReview();
+                this.$emit('close-form')
+              } else {
+                this.$refs.form.validate();
+              }
+            },
             async sendReview(){
                 let data = {
                     email:this.email,
-                    text:this.text 
-                }
+                    text:this.text
+                };
                 fetch('http://127.0.0.1:1337/api/v1/review/',{
                         method: "POST",
                         headers: {
@@ -103,7 +121,6 @@
                 ).then(response => {response.json()})
             }
         }
-
     }
 </script>
 
