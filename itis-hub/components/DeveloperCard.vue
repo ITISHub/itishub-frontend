@@ -82,7 +82,7 @@ export default {
 
   @media screen and (max-width: 568px){
     .developer-name {
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .test-developer {

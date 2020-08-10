@@ -1,18 +1,28 @@
 <template>
     <v-container class="content-container">
-      <NavigationCard title="разборы теории" link="/disciplines"/>
-      <NavigationCard title="разборы практики" link="/"/>
-      <NavigationCard title="о нас" link="/about"/>
-      <NavigationCard title="стримы Урала" link="/"/>
-      <NavigationCard title="coming soon" link="/"/>
+      <NavigationCard
+        v-for="card in homeCards"
+        :key=card.title
+        :title=card.title
+        :link="card.url"
+      />
     </v-container>
 </template>
 
 <script>
     import NavigationCard from "./NavigationCard";
     export default {
-        name: "MainContent",
-      components: {NavigationCard}
+      name: "MainContent",
+      components: {NavigationCard},
+      data () {
+        return {
+          homeCards: [],
+        }
+      },
+      async created() {
+        const response = await fetch('http://localhost:1337/api/v1/homecards/');
+        this.homeCards = await response.json()
+      }
     }
 </script>
 
