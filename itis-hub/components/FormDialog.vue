@@ -44,6 +44,7 @@
           <v-text-field
             type="email"
             class="rounded-lg mt-5 email-input"
+            v-model="email"
             placeholder="email"
             outlined
             dark
@@ -54,6 +55,7 @@
             type="text"
             placeholder="сообщение"
             class="rounded-lg mt-n1"
+            v-model="text"
             outlined
             dark
             auto-grow
