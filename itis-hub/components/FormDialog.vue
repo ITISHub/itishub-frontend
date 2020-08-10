@@ -91,7 +91,7 @@
                 text:'',
                 isValid: false,
                 emailRules: [
-                  v => !v || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'неверный email',
+                  v => !v || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/.test(v) || 'неверный email',
                   (v) => !!v
                 ],
                 requiredRules: [(v) => !!v || 'не молчите :)']
@@ -106,7 +106,7 @@
                 this.$refs.form.validate();
               }
             },
-            async sendReview(){
+            async sendReview () {
                 let data = {
                     email:this.email,
                     text:this.text
