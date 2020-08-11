@@ -1,11 +1,11 @@
 <template>
   <v-app id="application">
-    <div class="content">
       <HeaderBar />
       <Nuxt class="container"/>
 <!--      <div class="spacer"></div>-->
-      <FooterBar />
-    </div>
+      <div class="footer-container">
+        <FooterBar />
+      </div>
   </v-app>
 </template>
 
@@ -20,6 +20,11 @@
 <style>
   .container {
     max-width: 700px;
+  }
+
+  .footer-container {
+    min-height: 190px;
+    margin-top: 80px;
   }
 
   /*optimised for iPad's and for other tablets
