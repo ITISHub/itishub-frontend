@@ -8,9 +8,9 @@
       <DeveloperCard
         v-for="developer in developers"
         :key=developer.name
-        :name=developer.name
-        :duties=developer.duties
-        :image=developer.image
+        :name="developer.name + ' ' + developer.surname"
+        :duties=developer.about
+        :image=developer.avatar
         :github=developer.github
         :telegram=developer.telegram
         :vk=developer.vk
@@ -20,60 +20,45 @@
 </template>
 
 <script>
-    import DeveloperCard from "../components/DeveloperCard";
-    export default {
-        name: "about",
-      components: {DeveloperCard},
-      data () {
-          return {
-            developers: [
-              {
-                name: 'Elon Musk',
-                image: 'marat.jpg',
-                duties: 'content',
-                github: 'https://github.com/',
-                telegram: 'https://telegram.org/',
-                vk: 'https://vk.com/'
-              },
-              {
-                name: 'Elon Musk',
-                image: 'marat.jpg',
-                duties: 'content',
-                github: 'https://github.com/',
-                telegram: 'https://telegram.org/',
-                vk: 'https://vk.com/'
-              },
-              {
-                name: 'Elon Musk',
-                image: 'marat.jpg',
-                duties: 'content',
-                github: 'https://github.com/',
-                telegram: 'https://telegram.org/',
-                vk: 'https://vk.com/'
-              },
-            ]
-          }
-        }
-    }
+  import DeveloperCard from "../components/DeveloperCard";
+  export default {
+      name: "about",
+    components: {DeveloperCard},
+    data () {
+        return {
+          developers: []
+        };
+      },
+      async created() {
+        const response = await fetch('http://127.0.0.1:1337/api/v1/creators/');
+        this.developers = await response.json()
+      }
+  }
 </script>
 
 <style scoped>
   .about-wrapper {
     margin: 0 auto;
-    max-width: 700px;
+    max-width: 450px;
     text-align: center;
+  }
+
+  @media screen and (max-width: 568px){
+    .about-wrapper {
+      max-width: 300px;
+    }
   }
 
   .developers {
     min-height: 400px;
     padding: 15px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-column-gap: 15px;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .developers div {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    justify-self: center;
   }
 </style>

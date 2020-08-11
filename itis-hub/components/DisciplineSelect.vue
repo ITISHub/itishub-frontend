@@ -1,8 +1,11 @@
 <template>
   <v-container class="content-container">
-    <NavigationCard title="матанализ" link="/math-analysis-theory"/>
-    <NavigationCard title="дискретка" link="/discrete-math-theory"/>
-    <NavigationCard title="алгем" link="/algem-theory"/>
+    <NavigationCard
+      v-for="discipline in disciplines"
+      :key=discipline.id
+      :title=discipline.title
+      :link=discipline.url
+    />
   </v-container>
 </template>
 
@@ -10,7 +13,16 @@
 import NavigationCard from "./NavigationCard";
 export default {
     name: "DisciplineSelect",
-  components: {NavigationCard}
+    components: {NavigationCard},
+    data () {
+      return {
+        disciplines: [],
+      }
+    },
+    async created() {
+      const response = await fetch('http://localhost:1337/api/v1/courses/');
+      this.disciplines = await response.json()
+    }
 }
 </script>
 

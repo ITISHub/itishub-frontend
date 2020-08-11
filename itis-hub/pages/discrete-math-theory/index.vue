@@ -1,21 +1,21 @@
 <template>
   <v-container class="content-container">
     <v-container class="greeting">
-      <h1 class="mb-3">Дискретная математика</h1>
+      <h1 class="mb-3 discipline-title">Дискретная математика</h1>
       <p class="description">теория</p>
       <h4>темы:</h4>
-      <template v-if="themes.length === 0">
-        <p class="in-development">контент в разработке</p>
-      </template>
+<!--      <template v-if="courseData.lessons.length === 0">-->
+<!--        <p class="in-development">контент в разработке</p>-->
+<!--      </template>-->
     </v-container>
     <div class="info-container mb-5">
 
         <a
-          v-for="theme in themes"
-          :key="theme.link"
-          @click="openTheme(theme.name)"
+          v-for="lesson in getLessons"
+          :key="lesson.id"
+          @click="openTheme(lesson.title)"
         >
-          <DynamicCard :title="theme.name"/>
+          <DynamicCard :title="lesson.title"/>
         </a>
     </div>
     </v-container>
@@ -29,16 +29,22 @@
       data () {
         return {
           // динамический роутинг работает, но в пути кириллица 0_о
-          themes: [
-            {name: 'Теорема Кантора', link: 'kantor-theory'},
-            {name: 'Метод Блейка', link: 'blake-method'},
-          ]
+          courseData: ''
         }
       },
       methods: {
         openTheme(name) {
           this.$router.push('/discrete-math-theory/' + name);
-        }
+        },
+      },
+      async created() {
+        const response = await fetch('http://localhost:1337/api/v1/courses/2');
+        this.courseData = await response.json();
+      },
+      computed: {
+        getLessons () {
+          return this.courseData.lessons;
+        },
       }
     }
 </script>
@@ -64,5 +70,11 @@
 
 .info-container a {
   margin: 5px;
+}
+
+@media screen and (max-width: 431px){
+  .discipline-title {
+    font-size: 25px;
+  }
 }
 </style>

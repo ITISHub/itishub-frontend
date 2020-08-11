@@ -1,9 +1,9 @@
 <template>
   <!--still have a problem with position of footer (absolute or default 0_o ?)-->
-  <v-footer id="footer">
+  <v-footer absolute id="footer">
     <v-row class="footer-container">
       <v-col class="feedback">
-        <h4>На связи</h4>
+        <h4 class="greet">На связи</h4>
         <p>Нашли баг  или хотите
           с нами связаться? Пишите!
         </p>
@@ -93,5 +93,11 @@ export default {
     letter-spacing: normal;
     text-transform: none;
     color: white;
+  }
+
+  @media screen and (max-width: 431px) {
+    .links-title, .feedback {
+      font-size: 13px;
+    }
   }
 </style>

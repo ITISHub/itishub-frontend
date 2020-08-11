@@ -1,8 +1,8 @@
 <template>
   <div class="developer-content">
 
-    <div class="test-developer">
-      <div class="child mt-n3 ml-n3" :style="{'background-image': 'url(' + require('~/assets/card-images/developers/' + image) + ')' }"></div>
+    <div class="test-developer mr-2 mt-n1">
+      <div class="child mt-n3 ml-n3" :style="{'background-image': 'url(' + 'http://localhost:1337' +  image + ')' }"></div>
     </div>
 
     <div class="developer-info">
@@ -38,16 +38,10 @@ export default {
 </script>
 
 <style scoped>
-  .developer-image {
-    max-height: 100px;
-    max-width: 100px;
-    border-radius: 15px;
-  }
-
   .developer-content {
-    max-width: 300px;
+    max-width: 400px;
     display: flex;
-    gap: 2rem;
+    gap: 30px;
     justify-content: center;
     text-align: left;
   }
@@ -87,6 +81,15 @@ export default {
   }
 
   @media screen and (max-width: 568px){
+    .developer-name {
+      font-size: 14px;
+    }
+
+    .test-developer {
+      width: 80px;
+      height: 80px;
+    }
+
     .child:hover {
       transform: rotate(20deg);
     }

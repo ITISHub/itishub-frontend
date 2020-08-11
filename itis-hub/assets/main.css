@@ -40,6 +40,12 @@ a:hover {
   border: 3px solid white;
 }
 
+@media screen and (max-width: 431px){
+  .discipline-title, .theme-title {
+    font-size: 20px;
+  }
+}
+
 /* page-animations */
 .page-enter-active,
 .page-leave-active {
