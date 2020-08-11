@@ -4,7 +4,7 @@
       <h1 class="mb-3 discipline-title">Дискретная математика</h1>
       <p class="description">теория</p>
       <h4>темы:</h4>
-<!--      <template v-if="getLessons.length === 0">-->
+<!--      <template v-if="courseData.lessons.length === 0">-->
 <!--        <p class="in-development">контент в разработке</p>-->
 <!--      </template>-->
     </v-container>
@@ -35,7 +35,7 @@
       methods: {
         openTheme(name) {
           this.$router.push('/discrete-math-theory/' + name);
-        }
+        },
       },
       async created() {
         const response = await fetch('http://localhost:1337/api/v1/courses/2');
@@ -44,7 +44,7 @@
       computed: {
         getLessons () {
           return this.courseData.lessons;
-        }
+        },
       }
     }
 </script>
