@@ -2,9 +2,18 @@
   <div class="content-container">
     <v-container class="greeting">
       <h1 class="mb-3 theme-title"> {{ currentLesson.title }} </h1>
-      <a :href="currentLesson.video_url" target="_blank">youtube video</a>
-      <p class="theme-description">
+      <div class="video-wrapper">
+        <iframe class="video"
+                         src="https://www.youtube.com/embed/kjArjPZsoIc"
+                         frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                         allowfullscreen>
+        </iframe>
+      </div>
+      <p class="theme-description mt-3">
         {{ currentLesson.description }}
+      </p>
+      <p class="useful-links">
+        {{  }}
       </p>
     </v-container>
   </div>
@@ -34,9 +43,8 @@
 </script>
 
 <style scoped>
-  .theme-description {
-    height: 40vh;
-    display: grid;
-    place-items: center;
+  .video {
+    width: 560px;
+    height: 315px;
   }
 </style>
