@@ -3,17 +3,20 @@
     <v-container class="greeting">
       <h1 class="mb-3 theme-title"> {{ currentLesson.title }} </h1>
       <div class="video-wrapper">
-        <iframe class="video"
-                         src="https://www.youtube.com/embed/kjArjPZsoIc"
-                         frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                         allowfullscreen>
+        <iframe width="560" height="315" :src="currentLesson.video_url"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+
         </iframe>
       </div>
-      <p class="theme-description mt-3">
+      <p class="theme-description mt-5">
         {{ currentLesson.description }}
       </p>
       <p class="useful-links">
-        {{  }}
+        Полезные ссылки:
+      </p>
+      <p>
+        <a :href="currentLesson.link">Ссылка</a>
       </p>
     </v-container>
   </div>
@@ -43,8 +46,20 @@
 </script>
 
 <style scoped>
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+  }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   .video {
-    width: 560px;
-    height: 315px;
+    border: 2px solid white;
   }
 </style>
