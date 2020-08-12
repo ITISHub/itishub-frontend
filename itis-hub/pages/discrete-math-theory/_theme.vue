@@ -2,6 +2,7 @@
   <div class="content-container">
     <v-container class="greeting">
       <h1 class="mb-3 theme-title"> {{ currentLesson.title }} </h1>
+      <a :href="currentLesson.video_url" target="_blank">youtube video</a>
       <p class="theme-description">
         {{ currentLesson.description }}
       </p>
