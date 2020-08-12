@@ -4,9 +4,9 @@
       <h1 class="mb-3 discipline-title">Дискретная математика</h1>
       <p class="description">теория</p>
       <h4>темы:</h4>
-<!--      <template v-if="courseData.lessons.length === 0">-->
-<!--        <p class="in-development">контент в разработке</p>-->
-<!--      </template>-->
+      <template v-if="getLessons.length === 0">
+        <p class="in-development">контент в разработке</p>
+      </template>
     </v-container>
     <div class="info-container mb-5">
 
@@ -28,7 +28,6 @@
       components: {DynamicCard},
       data () {
         return {
-          // динамический роутинг работает, но в пути кириллица 0_о
           courseData: ''
         }
       },

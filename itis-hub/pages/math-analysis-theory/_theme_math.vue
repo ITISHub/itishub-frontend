@@ -1,7 +1,7 @@
 <template>
   <div class="content-container">
     <v-container class="greeting">
-      <h1 class="mb-3 theme-title"> {{ $route.params.theme }} </h1>
+      <h1 class="mb-3 theme-title"> {{ $route.params.theme_math }} </h1>
       <p class="theme-description">
         theme description
       </p>
@@ -11,7 +11,7 @@
 
 <script>
   export default {
-    name: "_theme"
+    name: "theme"
   }
 </script>
 

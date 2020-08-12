@@ -3,10 +3,11 @@
     <v-container class="greeting">
       <h1 class="mb-3 theme-title"> {{ currentLesson.title }} </h1>
       <div class="video-wrapper">
-        <iframe width="560" height="315" :src="currentLesson.video_url"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-
+        <iframe
+          :src="currentLesson.video_url"
+          class="video"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
         </iframe>
       </div>
       <p class="theme-description mt-5">
@@ -16,7 +17,7 @@
         Полезные ссылки:
       </p>
       <p>
-        <a :href="currentLesson.link">Ссылка</a>
+        <a :href="currentLesson.link" target="_blank">Ссылка</a>
       </p>
     </v-container>
   </div>
@@ -24,7 +25,7 @@
 
 <script>
   export default {
-    name: "_theme",
+    name: "theme",
     props: {
       lessonInfo: Object,
     },
@@ -37,7 +38,7 @@
       const response = await fetch('http://localhost:1337/api/v1/courses/2');
       let cource = await response.json();
       for (let i = 0; i < cource.lessons.length; i++) {
-        if (cource.lessons[i].id == this.$route.params.theme) {
+        if (cource.lessons[i].id == this.$route.params.theme_discrete) {
           this.currentLesson = cource.lessons[i];
         }
       }
