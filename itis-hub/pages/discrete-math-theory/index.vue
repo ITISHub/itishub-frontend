@@ -13,9 +13,9 @@
         <a
           v-for="lesson in getLessons"
           :key="lesson.id"
-          @click="openTheme(lesson.title)"
+          @click="openTheme(lesson)"
         >
-          <DynamicCard :title="lesson.title"/>
+          <DynamicCard :lesson-info="lesson"/>
         </a>
     </div>
     </v-container>
@@ -33,8 +33,8 @@
         }
       },
       methods: {
-        openTheme(name) {
-          this.$router.push('/discrete-math-theory/' + name);
+        openTheme(lesson) {
+          this.$router.push('/discrete-math-theory/' + lesson.id);
         },
       },
       async created() {

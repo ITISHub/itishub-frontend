@@ -2,7 +2,7 @@
     <v-card
       class="card-container"
     >
-      <p class="card-title"> {{title}} </p>
+      <p class="card-title"> {{ lessonInfo.title }} </p>
     </v-card>
 </template>
 
@@ -10,10 +10,9 @@
   export default {
     name: "DynamicCard",
     props: {
-      title: String,
-      event: String,
+      lessonInfo: Object,
       // just without link-parameter
-    }
+    },
   }
 </script>
 
