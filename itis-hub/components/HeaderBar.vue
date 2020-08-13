@@ -45,7 +45,6 @@ export default {
   name: "HeaderBar",
   data () {
     return {
-      switch1: true,
       pages: [
           { name: 'главная', link: '/'},
           { name: 'предметы', link: '/disciplines'},
@@ -78,10 +77,6 @@ export default {
   .logo-text {
     align-self: flex-end;
     margin-bottom: 0.1em;
-  }
-
-  .current-section {
-    align-self: flex-end;
   }
 
   .theme-changer {

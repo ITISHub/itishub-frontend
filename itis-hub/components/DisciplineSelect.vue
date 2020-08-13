@@ -20,7 +20,7 @@ export default {
       }
     },
     async created() {
-      const response = await fetch('http://localhost:1337/api/v1/courses/');
+      const response = await fetch(process.env.baseUrl + process.env.courseAccess);
       this.disciplines = await response.json()
     }
 }

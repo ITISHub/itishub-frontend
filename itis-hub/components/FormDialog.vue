@@ -111,14 +111,15 @@
                     email:this.email,
                     text:this.text
                 };
-                fetch('http://127.0.0.1:1337/api/v1/review/',{
+                  fetch(process.env.baseUrl + process.env.reviewAccess,{
                         method: "POST",
                         headers: {
                             'Content-Type':'application/json'
                         },
                         body: JSON.stringify(data)
                     }
-                ).then(response => {response.json()}).catch(alert)
+                )
+                //.then(response => {response.json()}).catch(alert)
             }
         }
     }

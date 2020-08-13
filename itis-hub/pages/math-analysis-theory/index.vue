@@ -39,7 +39,7 @@
       }
     },
     async created() {
-      const response = await fetch('http://localhost:1337/api/v1/courses/1');
+      const response = await fetch(process.env.baseUrl + process.env.courseAccess + process.env.courseId.mathAn);
       this.courseData = await response.json();
     },
     computed: {

@@ -4,6 +4,17 @@ export default {
   ** See https://nuxtjs.org/api/configuration-mode
   */
   mode: 'universal',
+  env: {
+    baseUrl: 'http://localhost:1337/',
+    courseId: {
+      mathAn: '1',
+      discreteMath: '2',
+      alGem: '3',
+    },
+    courseAccess: 'api/v1/courses/',
+    reviewAccess: 'api/v1/review/',
+    creatorsAccess: 'api/v1/creators/'
+  },
   /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target

@@ -44,7 +44,7 @@
       },
     },
     async created() {
-      const response = await fetch('http://localhost:1337/api/v1/courses/3');
+      const response = await fetch(process.env.baseUrl + process.env.courseAccess + process.env.courseId.alGem);
       this.courseData = await response.json();
     },
   }

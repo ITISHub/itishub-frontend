@@ -30,7 +30,7 @@
         };
       },
       async created() {
-        const response = await fetch('http://127.0.0.1:1337/api/v1/creators/');
+        const response = await fetch(process.env.baseUrl + process.env.creatorsAccess);
         this.developers = await response.json()
       }
   }
