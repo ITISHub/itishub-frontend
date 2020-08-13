@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="link">
+  <nuxt-link :to="link" no-prefetch>
     <v-card
       class="card-container"
     >
