@@ -7,9 +7,9 @@ export default {
   env: {
     baseUrl: 'http://localhost:1337/',
     courseId: {
-      mathAn: '1',
-      discreteMath: '2',
-      alGem: '3',
+      mathAn: 1,
+      discreteMath: 2,
+      alGem: 3,
     },
     courseAccess: 'api/v1/courses/',
     reviewAccess: 'api/v1/review/',

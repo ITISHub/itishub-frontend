@@ -2,21 +2,20 @@
   <v-container class="content-container">
     <v-container class="greeting">
       <h1 class="mb-3 discipline-title">Математический анализ</h1>
-      <p class="description">
-        теория
-      </p>
+      <p class="description">теория</p>
       <h4>темы:</h4>
-<!--      <template v-if="courseData.lessons.length === 0">-->
-<!--        <p class="in-development">контент в разработке</p>-->
-<!--      </template>-->
+      <!--      <template v-if="getLessons.length === 0">-->
+      <!--        <p class="in-development">контент в разработке</p>-->
+      <!--      </template>-->
     </v-container>
     <div class="info-container mb-5">
+
       <a
         v-for="lesson in getLessons"
         :key="lesson.id"
-        @click="openTheme(lesson.title)"
+        @click="openTheme(lesson)"
       >
-        <DynamicCard :title="lesson.title"/>
+        <DynamicCard :lesson-info="lesson"/>
       </a>
     </div>
   </v-container>
@@ -25,28 +24,27 @@
 <script>
   import DynamicCard from "../../components/DynamicCard";
   export default {
-    name: "math",
+    name: "math-analysis-theory",
     components: {DynamicCard},
     data () {
       return {
-        // динамический роутинг работает, но в пути кириллица 0_о
         courseData: ''
       }
     },
     methods: {
-      openTheme(name) {
-        this.$router.push('/math-analysis-theory/' + name);
-      }
+      openTheme(lesson) {
+        this.$router.push('/math-analysis-theory/' + lesson.id);
+      },
+    },
+    computed: {
+      getLessons () {
+        return this.courseData.lessons;
+      },
     },
     async created() {
       const response = await fetch(process.env.baseUrl + process.env.courseAccess + process.env.courseId.mathAn);
       this.courseData = await response.json();
     },
-    computed: {
-      getLessons () {
-        return this.courseData.lessons;
-      }
-    }
   }
 </script>
 
@@ -74,8 +72,8 @@
   }
 
   @media screen and (max-width: 431px){
-      .discipline-title {
-        font-size: 25px;
-      }
+    .discipline-title {
+      font-size: 25px;
+    }
   }
 </style>

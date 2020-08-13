@@ -31,17 +31,29 @@
     },
     data () {
       return {
-        currentLesson: '',
+        currentLessonId: '',
       }
     },
-    async created() {
-      const response = await fetch( process.env.baseUrl + process.env.courseAccess + process.env.courseId.discreteMath);
-      let cource = await response.json();
-      for (let i = 0; i < cource.lessons.length; i++) {
-        if (cource.lessons[i].id == this.$route.params.theme_discrete) {
-          this.currentLesson = cource.lessons[i];
-        }
+    // заполнили lessons
+    async fetch({ store }) {
+      // нужно сделать lessons.js более универсальным, для оптимизации (делать меньше запросов)
+      if (store.getters['lessons/lessons'].length >= 0) {
+        await  store.dispatch('lessons/loadUsers', process.env.courseId.discreteMath)
       }
+    },
+    computed: {
+      // в props'ах теперь есть lessons
+      lessons() {
+        return this.$store.getters['lessons/lessons']
+      },
+      // поиск нужного lesson'a
+      currentLesson() {
+        for (let i = 0; i < this.lessons.length; i++) {
+          if (this.lessons[i].id == this.$route.params.theme_discrete) {
+            return this.lessons[i];
+          }
+        }
+      },
     },
   }
 </script>

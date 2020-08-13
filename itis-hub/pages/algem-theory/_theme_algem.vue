@@ -11,7 +11,7 @@
 
 <script>
   export default {
-    name: "theme",
+    name: "theme-algem",
     validate({params}) {
       return /^\d+$/.test(params.theme_algem)
     },
