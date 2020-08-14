@@ -6,16 +6,16 @@
         задач первого курса ИТИСа, конспекты и прочие полезные материалы
       </p>
     </v-container>
-    <DisciplineSelect class="mb-3" :courses="courses"/>
+    <MenuContainer :menu-elements="courses"/>
   </div>
 </template>
 
 <script>
-  import DisciplineSelect from "../components/DisciplineSelect";
+  import MenuContainer from "../components/MenuContainer";
     export default {
         name: "disciplines",
         transitions: 'disciplines',
-        components: {DisciplineSelect},
+        components: {MenuContainer},
         async fetch({ store }) {
           if (store.getters['courses/courses'].length === 0) {
             await store.dispatch('courses/loadCourses')

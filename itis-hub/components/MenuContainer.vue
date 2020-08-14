@@ -1,23 +1,23 @@
 <template>
   <v-container class="content-container">
     <NavigationCard
-      v-for="discipline in courses"
-      :key=discipline.id
-      :title=discipline.title
-      :link=discipline.url
+      v-for="card in menuElements"
+      :key=card.id
+      :title=card.title
+      :link="card.url"
     />
   </v-container>
 </template>
 
 <script>
-import NavigationCard from "./NavigationCard";
-export default {
-    name: "DisciplineSelect",
+  import NavigationCard from "./NavigationCard";
+  export default {
+    name: "MenuContainer",
     components: {NavigationCard},
     props: {
-      courses: Array,
+      menuElements: Array,
     },
-}
+  }
 </script>
 
 <style scoped>

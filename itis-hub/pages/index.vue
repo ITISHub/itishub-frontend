@@ -6,18 +6,18 @@
         задач первого курса ИТИСа, конспекты и прочие полезные материалы
       </p>
     </v-container>
-    <MainContent class="mb-3" :homecards="homecards"/>
+    <MenuContainer :menu-elements="homecards"/>
   </div>
 </template>
 
 <script>
 import HeaderBar from "~/components/HeaderBar.vue";
 import CardContent from "../components/NavigationCard";
-import MainContent from "../components/MainContent";
+import MenuContainer from "../components/MenuContainer";
 
 export default {
   components: {
-    MainContent,
+    MenuContainer,
     CardContent,
     HeaderBar,
   },
