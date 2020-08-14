@@ -1,10 +1,18 @@
 export const state = () => ({
-  lessons: [],
+  mathanLessons: [],
+  discreteMathLessons: [],
+  algemLessons: [],
 });
 
 export const mutations = {
-  setLessons(state, lessons) {
-    state.lessons = lessons
+  setDiscreteMathLessons(state, lessons) {
+    state.discreteMathLessons = lessons
+  },
+  setAlgemLessons(state, lessons) {
+    state.algemLessons = lessons
+  },
+  setMathanLessons(state, lessons) {
+    state.mathanLessons = lessons
   }
 };
 
@@ -12,10 +20,17 @@ export const actions = {
   async loadUsers({ commit }, courseId) {
     const response = await fetch( process.env.baseUrl + process.env.courseAccess  + courseId);
     let cource = await response.json();
-    commit('setLessons', cource.lessons)
+    switch (courseId) {
+      case process.env.courseId.mathAn: commit('setMathanLessons', cource.lessons); break;
+      case process.env.courseId.discreteMath: commit('setDiscreteMathLessons', cource.lessons); break;
+      case process.env.courseId.alGem: commit('setAlgemLessons', cource.lessons); break;
+      default: break;
+    }
   },
 };
 
 export const getters = {
-  lessons: s => s.lessons
+  mathanLessons: s => s.mathanLessons,
+  discreteMathLessons: s => s.discreteMathLessons,
+  algemLessons: s => s.algemLessons,
 };

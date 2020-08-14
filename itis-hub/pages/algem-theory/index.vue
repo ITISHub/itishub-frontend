@@ -2,21 +2,20 @@
   <v-container class="content-container">
     <v-container class="greeting">
       <h1 class="mb-3 discipline-title">Алгебра и Геометрия</h1>
-      <p class="description">теория
-      </p>
+      <p class="description">теория</p>
       <h4>темы:</h4>
-<!--      <template v-if="isEmpty">-->
-<!--        <p class="in-development">контент в разработке</p>-->
-<!--      </template>-->
+      <!--      <template v-if="getLessons.length === 0">-->
+      <!--        <p class="in-development">контент в разработке</p>-->
+      <!--      </template>-->
     </v-container>
     <div class="info-container mb-5">
 
       <a
         v-for="lesson in getLessons"
         :key="lesson.id"
-        @click="openTheme(lesson.title)"
+        @click="openTheme(lesson)"
       >
-        <DynamicCard :title="lesson.title"/>
+        <DynamicCard :lesson-info="lesson"/>
       </a>
     </div>
   </v-container>
@@ -29,13 +28,12 @@
     components: {DynamicCard},
     data () {
       return {
-        // динамический роутинг работает, но в пути кириллица 0_о
         courseData: ''
       }
     },
     methods: {
-      openTheme(name) {
-        this.$router.push('/algem-theory/' + name);
+      openTheme(lesson) {
+        this.$router.push('/algem-theory/' + lesson.id);
       },
     },
     computed: {

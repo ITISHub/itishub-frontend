@@ -25,7 +25,7 @@
 
 <script>
   export default {
-    name: "theme-mathan",
+    name: "theme-math",
     props: {
       lessonInfo: Object,
     },
@@ -34,17 +34,20 @@
         currentLessonId: '',
       }
     },
+    validate({params}) {
+      return /^\d+$/.test(params.theme_math)
+    },
     // заполнили lessons
     async fetch({ store }) {
       // нужно сделать lessons.js более универсальным, для оптимизации (делать меньше запросов)
-      if (store.getters['lessons/lessons'].length >= 0) {
-        await  store.dispatch('lessons/loadUsers', process.env.courseId.mathAn)
+      if (store.getters['lessons/mathanLessons'].length >= 0) {
+        await store.dispatch('lessons/loadUsers', process.env.courseId.mathAn)
       }
     },
     computed: {
       // в props'ах теперь есть lessons
       lessons() {
-        return this.$store.getters['lessons/lessons']
+        return this.$store.getters['lessons/mathanLessons']
       },
       // поиск нужного lesson'a
       currentLesson() {
