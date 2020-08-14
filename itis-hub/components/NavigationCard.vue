@@ -3,7 +3,7 @@
     <v-card
       class="card-container"
     >
-      <p class="card-title" style="text-align: center; word-break: keep-all"> {{ title }}</p>
+      <p class="card-title"> {{ title }} </p>
     </v-card>
   </nuxt-link>
 </template>
@@ -14,7 +14,6 @@
     props: {
       title: String,
       link: String,
-      event: String,
     }
   }
 </script>
@@ -40,6 +39,7 @@
     font-size: 20px;
     color: white;
     text-align: center;
+    word-break: keep-all;
   }
 
   .card-container:hover {
