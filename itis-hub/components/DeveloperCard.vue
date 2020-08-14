@@ -2,7 +2,7 @@
   <div class="developer-content">
 
     <div class="test-developer mr-2 mt-n1">
-      <div class="child mt-n3 ml-n3" :style="{'background-image': 'url(' + 'http://localhost:1337' +  image + ')' }"></div>
+      <div class="child mt-n3 ml-n3" :style="{'background-image': 'url(' + currentBaseUrl +  image + ')' }"></div>
     </div>
 
     <div class="developer-info">
@@ -34,6 +34,12 @@ export default {
       github: String,
       telegram: String,
     },
+    computed: {
+      currentBaseUrl() {
+        // removed last '/' for media files
+        return process.env.baseUrl.slice(0, process.env.baseUrl.length - 1);
+      }
+    }
 }
 </script>
 

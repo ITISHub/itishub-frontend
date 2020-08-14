@@ -17,7 +17,7 @@ export const mutations = {
 };
 
 export const actions = {
-  async loadUsers({ commit }, courseId) {
+  async loadLessons({ commit }, courseId) {
     const response = await fetch( process.env.baseUrl + process.env.courseAccess  + courseId);
     let cource = await response.json();
     switch (courseId) {

@@ -35,7 +35,7 @@
       async fetch({ store }) {
         // нужно сделать lessons.js более универсальным, для оптимизации (делать меньше запросов)
         if (store.getters['lessons/discreteMathLessons'].length === 0) {
-          await store.dispatch('lessons/loadUsers', process.env.courseId.discreteMath)
+          await store.dispatch('lessons/loadLessons', process.env.courseId.discreteMath)
         }
       },
       computed: {

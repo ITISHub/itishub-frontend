@@ -85,11 +85,11 @@
 <script>
     export default {
         name: "FormDialog",
-      // перенести в vuex
+        // перенести в vuex
         data() {
             return {
-                email:'',
-                text:'',
+                email: '',
+                text: '',
                 isValid: false,
                 emailRules: [
                   v => !v || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/.test(v) || 'неверный email',
@@ -98,7 +98,7 @@
                 requiredRules: [(v) => !!v || 'не молчите :)']
             }
         },
-      // перенести в vuex
+        // лучше перенести в vuex
         methods: {
             validateForm () {
               if (this.isValid) {
@@ -110,8 +110,8 @@
             },
             async sendReview () {
                 let data = {
-                    email:this.email,
-                    text:this.text
+                    email: this.email,
+                    text: this.text
                 };
                   fetch(process.env.baseUrl + process.env.reviewAccess,{
                         method: "POST",

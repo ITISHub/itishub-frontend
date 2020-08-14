@@ -34,7 +34,7 @@
     async fetch({ store }) {
       // нужно сделать lessons.js более универсальным, для оптимизации (делать меньше запросов)
       if (store.getters['lessons/algemLessons'].length === 0) {
-        await store.dispatch('lessons/loadUsers', process.env.courseId.alGem)
+        await store.dispatch('lessons/loadLessons', process.env.courseId.alGem)
       }
     },
     computed: {
