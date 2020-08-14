@@ -6,14 +6,27 @@
         задач первого курса ИТИСа, конспекты и прочие полезные материалы
       </p>
     </v-container>
-    <DisciplineSelect class="mb-3"/>
+    <DisciplineSelect class="mb-3" :courses="courses"/>
   </div>
 </template>
 
 <script>
+  import DisciplineSelect from "../components/DisciplineSelect";
     export default {
         name: "disciplines",
-        transitions: 'disciplines'
+        transitions: 'disciplines',
+        components: {DisciplineSelect},
+        async fetch({ store }) {
+          if (store.getters['courses/courses'].length === 0) {
+            await store.dispatch('courses/loadCourses')
+          }
+        },
+        computed: {
+          // в props'ах теперь есть creators
+          courses() {
+            return this.$store.getters['courses/courses']
+          },
+        }
     }
 </script>
 

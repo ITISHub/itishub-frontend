@@ -13,7 +13,8 @@ export default {
     },
     courseAccess: 'api/v1/courses/',
     reviewAccess: 'api/v1/review/',
-    creatorsAccess: 'api/v1/creators/'
+    creatorsAccess: 'api/v1/creators/',
+    homecardsAccess: 'api/v1/homecards/',
   },
   /*
   ** Nuxt target

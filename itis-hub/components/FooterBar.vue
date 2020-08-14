@@ -1,5 +1,4 @@
 <template>
-  <!--still have a problem with position of footer (absolute or default 0_o ?)-->
   <v-footer absolute id="footer">
     <v-row class="footer-container">
       <v-col class="feedback">

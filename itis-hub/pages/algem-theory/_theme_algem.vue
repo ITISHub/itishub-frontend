@@ -32,13 +32,6 @@
     validate({params}) {
       return /^\d+$/.test(params.theme_algem)
     },
-    // заполнили lessons
-    async fetch({ store }) {
-      // нужно сделать lessons.js более универсальным, для оптимизации (делать меньше запросов)
-      if (store.getters['lessons/algemLessons'].length >= 0) {
-        await store.dispatch('lessons/loadUsers', process.env.courseId.alGem)
-      }
-    },
     computed: {
       // в props'ах теперь есть lessons
       lessons() {

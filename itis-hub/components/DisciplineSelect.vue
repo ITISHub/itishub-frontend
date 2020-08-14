@@ -1,7 +1,7 @@
 <template>
   <v-container class="content-container">
     <NavigationCard
-      v-for="discipline in disciplines"
+      v-for="discipline in courses"
       :key=discipline.id
       :title=discipline.title
       :link=discipline.url
@@ -14,15 +14,9 @@ import NavigationCard from "./NavigationCard";
 export default {
     name: "DisciplineSelect",
     components: {NavigationCard},
-    data () {
-      return {
-        disciplines: [],
-      }
+    props: {
+      courses: Array,
     },
-    async created() {
-      const response = await fetch(process.env.baseUrl + process.env.courseAccess);
-      this.disciplines = await response.json()
-    }
 }
 </script>
 

@@ -32,13 +32,6 @@
     validate({params}) {
       return /^\d+$/.test(params.theme_math)
     },
-    // заполнили lessons
-    async fetch({ store }) {
-      // нужно сделать lessons.js более универсальным, для оптимизации (делать меньше запросов)
-      if (store.getters['lessons/mathanLessons'].length >= 0) {
-        await store.dispatch('lessons/loadUsers', process.env.courseId.mathAn)
-      }
-    },
     computed: {
       // в props'ах теперь есть lessons
       lessons() {

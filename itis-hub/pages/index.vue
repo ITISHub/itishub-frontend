@@ -6,7 +6,7 @@
         задач первого курса ИТИСа, конспекты и прочие полезные материалы
       </p>
     </v-container>
-    <MainContent class="mb-3"/>
+    <MainContent class="mb-3" :homecards="homecards"/>
   </div>
 </template>
 
@@ -24,6 +24,17 @@ export default {
   data() {
     return {}
   },
+  async fetch({ store }) {
+    if (store.getters['homecards/homecards'].length === 0) {
+      await store.dispatch('homecards/loadHomecards')
+    }
+  },
+  computed: {
+    // в props'ах теперь есть creators
+    homecards() {
+      return this.$store.getters['homecards/homecards']
+    },
+  }
 }
 </script>
 

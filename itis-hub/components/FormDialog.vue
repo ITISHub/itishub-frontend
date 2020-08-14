@@ -3,7 +3,7 @@
     <p style="text-align: right">
       <v-btn
         @click="$emit('close-form')"
-        icon
+      icon
         color="grey"
         class="mr-2 mt-2"
       >
@@ -85,6 +85,7 @@
 <script>
     export default {
         name: "FormDialog",
+      // перенести в vuex
         data() {
             return {
                 email:'',
@@ -97,6 +98,7 @@
                 requiredRules: [(v) => !!v || 'не молчите :)']
             }
         },
+      // перенести в vuex
         methods: {
             validateForm () {
               if (this.isValid) {

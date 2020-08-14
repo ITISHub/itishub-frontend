@@ -1,7 +1,7 @@
 <template>
     <v-container class="content-container">
       <NavigationCard
-        v-for="card in homeCards"
+        v-for="card in homecards"
         :key=card.title
         :title=card.title
         :link="card.url"
@@ -14,15 +14,9 @@
     export default {
       name: "MainContent",
       components: {NavigationCard},
-      data () {
-        return {
-          homeCards: [],
-        }
+      props: {
+        homecards: Array,
       },
-      async created() {
-        const response = await fetch('http://localhost:1337/api/v1/homecards/');
-        this.homeCards = await response.json()
-      }
     }
 </script>
 

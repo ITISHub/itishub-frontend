@@ -4,9 +4,9 @@
       <h1 class="mb-3 discipline-title">Алгебра и Геометрия</h1>
       <p class="description">теория</p>
       <h4>темы:</h4>
-      <!--      <template v-if="getLessons.length === 0">-->
-      <!--        <p class="in-development">контент в разработке</p>-->
-      <!--      </template>-->
+      <template v-if="lessons.length === 0">
+        <p class="in-development">контент в разработке</p>
+      </template>
     </v-container>
     <div class="info-container mb-5">
 
