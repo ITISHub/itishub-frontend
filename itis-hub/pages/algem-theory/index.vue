@@ -11,7 +11,7 @@
     <div class="info-container mb-5">
 
       <a
-        v-for="lesson in getLessons"
+        v-for="lesson in lessons"
         :key="lesson.id"
         @click="openTheme(lesson)"
       >
@@ -26,24 +26,22 @@
   export default {
     name: "algem-theory",
     components: {DynamicCard},
-    data () {
-      return {
-        courseData: ''
-      }
-    },
     methods: {
       openTheme(lesson) {
         this.$router.push('/algem-theory/' + lesson.id);
       },
     },
-    computed: {
-      getLessons () {
-        return this.courseData.lessons;
-      },
+    async fetch({ store }) {
+      // нужно сделать lessons.js более универсальным, для оптимизации (делать меньше запросов)
+      if (store.getters['lessons/algemLessons'].length === 0) {
+        await store.dispatch('lessons/loadUsers', process.env.courseId.alGem)
+      }
     },
-    async created() {
-      const response = await fetch(process.env.baseUrl + process.env.courseAccess + process.env.courseId.alGem);
-      this.courseData = await response.json();
+    computed: {
+      // в props'ах теперь есть lessons
+      lessons() {
+        return this.$store.getters['lessons/algemLessons']
+      },
     },
   }
 </script>

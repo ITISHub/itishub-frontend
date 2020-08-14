@@ -29,11 +29,6 @@
     props: {
       lessonInfo: Object,
     },
-    data () {
-      return {
-        currentLessonId: '',
-      }
-    },
     validate({params}) {
       return /^\d+$/.test(params.theme_discrete)
     },
@@ -58,9 +53,6 @@
         }
       },
     },
-    created() {
-      console.log(this.lessons)
-    }
   }
 </script>
 

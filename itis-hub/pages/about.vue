@@ -24,15 +24,17 @@
   export default {
       name: "about",
     components: {DeveloperCard},
-    data () {
-        return {
-          developers: []
-        };
-      },
-      async created() {
-        const response = await fetch(process.env.baseUrl + process.env.creatorsAccess);
-        this.developers = await response.json()
+    async fetch({ store }) {
+      if (store.getters['creators/creators'].length === 0) {
+        await store.dispatch('creators/loadCreators')
       }
+    },
+    computed: {
+      // в props'ах теперь есть creators
+      developers() {
+        return this.$store.getters['creators/creators']
+      },
+    }
   }
 </script>
 

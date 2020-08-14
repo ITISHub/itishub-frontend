@@ -11,7 +11,7 @@
     <div class="info-container mb-5">
 
         <a
-          v-for="lesson in getLessons"
+          v-for="lesson in lessons"
           :key="lesson.id"
           @click="openTheme(lesson)"
         >
@@ -26,24 +26,23 @@
     export default {
       name: "discrete-math-theory",
       components: {DynamicCard},
-      data () {
-        return {
-          courseData: ''
-        }
-      },
       methods: {
+        // ткрыть новую страницу
         openTheme(lesson) {
           this.$router.push('/discrete-math-theory/' + lesson.id);
         },
       },
-      computed: {
-        getLessons () {
-          return this.courseData.lessons;
-        },
+      async fetch({ store }) {
+        // нужно сделать lessons.js более универсальным, для оптимизации (делать меньше запросов)
+        if (store.getters['lessons/discreteMathLessons'].length === 0) {
+          await store.dispatch('lessons/loadUsers', process.env.courseId.discreteMath)
+        }
       },
-      async created() {
-        const response = await fetch(process.env.baseUrl + process.env.courseAccess + process.env.courseId.discreteMath);
-        this.courseData = await response.json();
+      computed: {
+        // в props'ах теперь есть lessons
+        lessons() {
+          return this.$store.getters['lessons/discreteMathLessons']
+        },
       },
     }
 </script>
