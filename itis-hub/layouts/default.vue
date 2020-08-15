@@ -2,7 +2,6 @@
   <v-app id="application">
       <HeaderBar />
       <Nuxt class="container"/>
-<!--      <div class="spacer"></div>-->
       <div class="footer-container">
         <FooterBar />
       </div>
@@ -11,9 +10,9 @@
 
 <script>
   import HeaderBar from "../components/HeaderBar";
-  import Footer from "../components/FooterBar";
+  import FooterBar from "../components/FooterBar";
   export default {
-    components: {Footer, HeaderBar}
+    components: {FooterBar, HeaderBar}
   }
 </script>
 
@@ -26,10 +25,4 @@
     min-height: 190px;
     margin-top: 80px;
   }
-
-  /*optimised for iPad's and for other tablets
-    костыль тот еще 0_о */
-  /*.spacer {*/
-  /*  min-height: calc(31vh - 200px);*/
-  /*}*/
 </style>

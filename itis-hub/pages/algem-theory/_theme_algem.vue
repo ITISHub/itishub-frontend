@@ -32,6 +32,14 @@
     validate({params}) {
       return /^\d+$/.test(params.theme_algem)
     },
+    // делается для того, чтобы исключить ошибку, когда свойство title берется от undefined, при ручном вводе ID урока
+    // в адресную строку, по хорошему нужно убрать этот запрос из логики страницы темы (а может и нет 0_о)
+    async fetch({ store }) {
+      // нужно сделать lessons.js более универсальным, для оптимизации (делать меньше запросов)
+      if (store.getters['lessons/algemLessons'].length === 0) {
+        await store.dispatch('lessons/loadLessons', process.env.courseId.alGem)
+      }
+    },
     computed: {
       // в props'ах теперь есть lessons
       lessons() {
