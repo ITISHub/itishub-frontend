@@ -25,6 +25,11 @@
             {{ link.title }}
           </a>
         </li>
+        <li>
+          <a :href="baseUrl + currentLesson.pdf_file" target="_blank">
+            Конспект
+          </a>
+        </li>
       </ul>
     </v-container>
   </div>
@@ -60,6 +65,10 @@
           }
         }
       },
+      // vue не видит process в html
+      baseUrl() {
+        return process.env.baseUrl.slice(0, process.env.baseUrl.length - 1)
+      }
     },
   }
 </script>
