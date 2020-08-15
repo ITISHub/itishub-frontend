@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&display=swap');
-/*импорт заменить на скачанные шрифты*/
+@font-face {
+  font-family: Comfortaa;
+  src: url("font/Comfortaa-SemiBold.ttf");
+}
 
 :root {
   --bg_color: #fff;
@@ -16,7 +18,7 @@
 }
 
 #application, #feedback-form {
-  font-family: 'Comfortaa', sans-serif;
+  font-family: Comfortaa, sans-serif;
   background-color: var(--bg_color);
   color: var(--color);
   transition: background-color 0.5s;
