@@ -12,13 +12,11 @@
 
 <script>
 import HeaderBar from "~/components/HeaderBar.vue";
-import CardContent from "../components/NavigationCard";
 import MenuContainer from "../components/MenuContainer";
 
 export default {
   components: {
     MenuContainer,
-    CardContent,
     HeaderBar,
   },
   data() {

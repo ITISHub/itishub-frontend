@@ -1,19 +1,20 @@
 <template>
   <v-container class="content-container">
-    <NavigationCard
+    <DynamicCard
       v-for="card in menuElements"
       :key=card.id
       :title=card.title
-      :link="card.url"
+      :link=card.url
+      title-size="20"
     />
   </v-container>
 </template>
 
 <script>
-  import NavigationCard from "./NavigationCard";
+  import DynamicCard from "./DynamicCard";
   export default {
     name: "MenuContainer",
-    components: {NavigationCard},
+    components: {DynamicCard},
     props: {
       menuElements: Array,
     },

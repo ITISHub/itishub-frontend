@@ -1,17 +1,38 @@
 <template>
+  <a @click="openLink(link, lessonId)">
     <v-card
       class="card-container"
     >
-      <p class="card-title"> {{ lessonInfo.title }} </p>
+      <p
+        class="card-title"
+        :style="{'font-size': titleSize + 'px'}"
+      >
+        {{ title }}
+      </p>
     </v-card>
+  </a>
 </template>
 
 <script>
   export default {
     name: "DynamicCard",
     props: {
-      lessonInfo: Object,
-      // just without link-parameter
+      title: {
+        type: String,
+        required: true,
+      },
+      titleSize: String,
+      // пропсы для навигации
+      lessonId: Number,
+      link: String,
+    },
+    // желательно заменить на что-то более обощенное
+    methods: {
+      openLink(link, lessonId) {
+        if (lessonId === undefined) {
+          this.$router.push(link)
+        } else this.$router.push(link + lessonId)
+      },
     },
   }
 </script>
@@ -34,7 +55,7 @@
   }
 
   .card-title {
-    word-wrap: break-word;
+    max-width: 150px;
     font-size: 15px;
     color: white;
     text-align: center;

@@ -8,15 +8,14 @@
 <!--        <p class="in-development">контент в разработке</p>-->
 <!--      </template>-->
     </v-container>
-    <div class="info-container mb-5">
-
-        <a
-          v-for="lesson in lessons"
-          :key="lesson.id"
-          @click="openTheme(lesson)"
-        >
-          <DynamicCard :lesson-info="lesson"/>
-        </a>
+    <div class="info-container">
+      <DynamicCard
+        v-for="lesson in lessons"
+        :key="lesson.id"
+        :title="lesson.title"
+        :lesson-id="lesson.id"
+        link="/discrete-math-theory/"
+      />
     </div>
     </v-container>
 </template>
