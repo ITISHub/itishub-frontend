@@ -16,9 +16,16 @@
       <p class="useful-links">
         Полезные ссылки:
       </p>
-      <p>
-        <a :href="currentLesson.link" target="_blank">Ссылка</a>
-      </p>
+      <ul class="list-of-links">
+        <li
+          v-for="link in currentLesson.useful_links"
+          :key="link.link"
+        >
+          <a :href="link.url" target="_blank">
+            {{ link.title }}
+          </a>
+        </li>
+      </ul>
     </v-container>
   </div>
 </template>
@@ -73,5 +80,10 @@
 
   .video {
     border: 2px solid white;
+  }
+
+  .list-of-links {
+    text-align: left;
+    text-decoration: none;
   }
 </style>

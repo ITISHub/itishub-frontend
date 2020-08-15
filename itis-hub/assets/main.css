@@ -32,8 +32,25 @@
   transition: background-color 0.5s;
 }
 
+/*default - links without animations*/
 a:hover {
   text-decoration: none;
+}
+
+.list-of-links a {
+  background: linear-gradient(
+    to bottom, var(--color) 0%,
+    var(--color) 100%
+  ) repeat-x 0 100%;
+  background-size: 1px 1px;
+  color: var(--color);
+  text-decoration: none;
+  transition: background-size .2s;
+}
+
+.list-of-links a:hover {
+  background-size: 1px 50px;
+  color: var(--bg_color);
 }
 
 .developer-image {
