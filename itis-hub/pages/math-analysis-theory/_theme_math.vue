@@ -27,7 +27,7 @@
         </li>
         <li>
           <a :href="baseUrl + currentLesson.pdf_file" target="_blank">
-            Конспект
+            Конспект &#128196;
           </a>
         </li>
       </ul>
