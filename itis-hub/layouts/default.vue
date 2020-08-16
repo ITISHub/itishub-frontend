@@ -24,6 +24,12 @@
 
   .footer-container{
     min-height: 190px;
-    margin-top: 110px;
+    margin-top: 80px;
+  }
+
+  @media screen and (max-width: 332px){
+    .footer-container{
+      margin-top: 110px;
+    }
   }
 </style>
