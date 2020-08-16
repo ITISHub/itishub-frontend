@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container class="greeting">
-      <h1 class="mb-3">Welcome to the hub, Buddy</h1>
+      <h1 class="mb-3">Выберите предмет</h1>
       <p class="description">На сайте есть разборы теоретических и практических
         задач первого курса ИТИСа, конспекты и прочие полезные материалы
       </p>

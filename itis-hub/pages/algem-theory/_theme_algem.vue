@@ -1,6 +1,6 @@
 <template>
     <v-container class="theme">
-      <h1 class="mb-3"> {{ currentLesson.title }} </h1>
+      <h1 class="mb-3 theme__title"> {{ currentLesson.title }} </h1>
       <div class="theme__video-wrapper wrapper">
         <iframe
           :src="currentLesson.video_url"

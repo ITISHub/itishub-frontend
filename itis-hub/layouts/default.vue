@@ -24,6 +24,6 @@
 
   .footer-container{
     min-height: 190px;
-    margin-top: 100px;
+    margin-top: 110px;
   }
 </style>

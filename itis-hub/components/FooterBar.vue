@@ -3,8 +3,9 @@
     <v-row class="footer-bar">
       <v-col class="footer-bar__feedback feedback">
         <h4>На связи</h4>
-        <p>Нашли баг  или хотите
-          с нами связаться? Пишите!
+        <p>
+          Хотите предложить тему
+          или нашли баг? Пишите!
         </p>
         <v-btn
           color="#33aade"
