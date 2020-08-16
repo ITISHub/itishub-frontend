@@ -44,6 +44,7 @@
     margin: 0 auto;
     max-width: 450px;
     text-align: center;
+    margin-top: 2em;
   }
 
   @media screen and (max-width: 568px){
