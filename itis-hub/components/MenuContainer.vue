@@ -1,6 +1,7 @@
 <template>
-  <v-container class="content-container">
+  <v-container class="menu-content">
     <DynamicCard
+      class="menu-content__card"
       v-for="card in menuElements"
       :key=card.id
       :title=card.title
@@ -22,14 +23,14 @@
 </script>
 
 <style scoped>
-  .content-container {
+  .menu-content {
     max-width: 700px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   }
 
-  .content-container a {
+  .menu-content__card {
     margin: 5px;
   }
 </style>

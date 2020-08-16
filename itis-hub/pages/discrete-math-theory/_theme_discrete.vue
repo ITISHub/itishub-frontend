@@ -1,38 +1,36 @@
 <template>
-  <div class="content-container">
-    <v-container class="greeting">
-      <h1 class="mb-3 theme-title"> {{ currentLesson.title }} </h1>
-      <div class="video-wrapper">
-        <iframe
-          :src="currentLesson.video_url"
-          class="video"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-      <p class="theme-description mt-5">
-        {{ currentLesson.description }}
-      </p>
-      <h5 class="useful-links">
-        Полезные ссылки:
-      </h5>
-      <ul class="list-of-links">
-        <li
-          v-for="link in currentLesson.useful_links"
-          :key="link.link"
-        >
-          <a :href="link.url" target="_blank">
-            {{ link.title }}
-          </a>
-        </li>
-        <li>
-          <a :href="baseUrl + currentLesson.pdf_file" target="_blank">
-            Конспект &#128196;
-          </a>
-        </li>
-      </ul>
-    </v-container>
-  </div>
+  <v-container class="theme">
+    <h1 class="mb-3"> {{ currentLesson.title }} </h1>
+    <div class="theme__video-wrapper wrapper">
+      <iframe
+        :src="currentLesson.video_url"
+        class="wrapper__video"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="mt-5">
+      {{ currentLesson.description }}
+    </p>
+    <p>
+      Полезные ссылки:
+    </p>
+    <ul class="theme__list-of-links">
+      <li
+        v-for="link in currentLesson.useful_links"
+        :key="link.link"
+      >
+        <a :href="link.url" target="_blank">
+          {{ link.title }}
+        </a>
+      </li>
+      <li>
+        <a :href="baseUrl + currentLesson.pdf_file" target="_blank">
+          Конспект &#128196;
+        </a>
+      </li>
+    </ul>
+  </v-container>
 </template>
 
 <script>
@@ -74,12 +72,17 @@
 </script>
 
 <style scoped>
-  .video-wrapper {
+  .theme {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .theme__video-wrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
     height: 0;
   }
-  .video-wrapper iframe {
+  .theme__video-wrapper iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -87,11 +90,11 @@
     height: 100%;
   }
 
-  .video {
+  .wrapper__video {
     border: 2px solid white;
   }
 
-  .list-of-links {
+  .theme__list-of-links {
     text-align: left;
     text-decoration: none;
   }

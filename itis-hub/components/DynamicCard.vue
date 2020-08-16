@@ -1,10 +1,10 @@
 <template>
   <a @click="openLink(link, lessonId)">
     <v-card
-      class="card-container"
+      class="card"
     >
       <p
-        class="card-title"
+        class="card__title"
         :style="{'font-size': titleSize + 'px'}"
       >
         {{ title }}
@@ -38,7 +38,7 @@
 </script>
 
 <style scoped>
-  .card-container {
+  .card {
     padding: 15px;
     min-height: 280px;
     display: grid;
@@ -49,12 +49,12 @@
   }
 
   @media screen and (max-width: 464px) {
-    .card-container {
+    .card {
       min-height: 150px;
     }
   }
 
-  .card-title {
+  .card__title {
     max-width: 150px;
     font-size: 15px;
     color: white;
@@ -62,7 +62,7 @@
     word-break: normal;
   }
 
-  .card-container:hover {
+  .card:hover {
     background-color: #4789a2;
   }
 </style>

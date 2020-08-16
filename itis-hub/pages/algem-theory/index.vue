@@ -1,15 +1,16 @@
 <template>
-  <v-container class="content-container">
+  <v-container class="content-container discipline">
     <v-container class="greeting">
-      <h1 class="mb-3 discipline-title">Алгебра и Геометрия</h1>
+      <h1 class="mb-3 discipline__title">Алгебра и Геометрия</h1>
       <p class="description">теория</p>
       <h4>темы:</h4>
       <template v-if="lessons.length === 0">
         <p class="in-development">контент в разработке</p>
       </template>
     </v-container>
-    <div class="info-container">
+    <div class="discipline__info-container lessons">
         <DynamicCard
+          class="lessons_card"
           v-for="lesson in lessons"
           :key="lesson.id"
           :title="lesson.title"
@@ -48,7 +49,7 @@
     margin: 0 auto;
   }
 
-  .info-container {
+  .discipline__info-container {
     padding-left: 10px;
     padding-right: 10px;
     max-width: 700px;
@@ -57,16 +58,12 @@
     grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   }
 
-  .info-container li {
-    margin-bottom: 3px;
-  }
-
-  .info-container a {
+  .lessons_card{
     margin: 5px;
   }
 
   @media screen and (max-width: 431px){
-    .discipline-title {
+    .discipline__title {
       font-size: 25px;
     }
   }

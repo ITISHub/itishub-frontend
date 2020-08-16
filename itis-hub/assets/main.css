@@ -2,7 +2,7 @@
   font-family: Comfortaa;
   src: url("font/Comfortaa-SemiBold.ttf");
 }
-
+/*themes*/
 :root {
   --bg_color: #fff;
   --color: #000;
@@ -39,7 +39,7 @@ a:hover {
   text-decoration: none;
 }
 
-.list-of-links a {
+.theme__list-of-links  a {
   background: linear-gradient(
     to bottom, var(--color) 0%,
     var(--color) 100%
@@ -50,14 +50,14 @@ a:hover {
   transition: background-size .2s;
 }
 
-.list-of-links a:hover {
+.theme__list-of-links  a:hover {
   background-size: 1px 50px;
   color: var(--bg_color);
 }
 
-.developer-image {
-  border: 3px solid white;
-}
+/*color of selected text*/
+::selection {background: var(--color); color: var(--bg_color)}
+::-moz-selection {background: var(--color); color: var(--bg_color)}
 
 @media screen and (max-width: 431px){
   .discipline-title, .theme-title {

@@ -1,11 +1,12 @@
 <template>
   <div class="about-wrapper">
-    <v-container class="greeting">
+    <v-container>
       <h2 class="mb-3">Разработчики</h2>
       <p>thx</p>
     </v-container>
-    <div class="developers">
+    <div class="about-wrapper__developers developers">
       <DeveloperCard
+        class="developers__card"
         v-for="developer in developers"
         :key=developer.name
         :name="developer.name + ' ' + developer.surname"
@@ -51,7 +52,7 @@
     }
   }
 
-  .developers {
+  .about-wrapper__developers {
     min-height: 400px;
     padding: 15px;
     display: flex;
@@ -59,7 +60,7 @@
     align-items: flex-start;
   }
 
-  .developers div {
+  .developers__card {
     margin-bottom: 40px;
     justify-self: center;
   }

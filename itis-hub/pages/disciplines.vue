@@ -1,5 +1,5 @@
 <template>
-  <div class="content-container">
+  <div>
     <v-container class="greeting">
       <h1 class="mb-3">Welcome to the hub, Buddy</h1>
       <p class="description">На сайте есть разборы теоретических и практических
@@ -31,4 +31,13 @@
 </script>
 
 <style scoped>
+  .greeting {
+    text-align: center;
+    margin-top: 2em;
+  }
+
+  .description {
+    max-width: 600px;
+    margin: auto;
+  }
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-    <h3 class="logo-text">ITIS-hub</h3>
-    <div class="button-container mt-4">
+  <div class="container header">
+    <h3 class="header__logo">ITIS-hub</h3>
+    <div class="header__btn-container btn-container mt-4">
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
           <v-btn
@@ -10,7 +10,7 @@
             depressed
             v-bind="attrs"
             v-on="on"
-            class="write-button nav-button"
+            class="btn-container__write-button btn-container__nav-button"
             height="30"
             width="55"
           >
@@ -18,7 +18,7 @@
           </v-btn>
         </template>
         <v-list>
-          <nuxt-link v-for="page in pages" :to="page.link" no-prefetch>
+          <nuxt-link v-for="page in pages" :key="page.name" :to="page.link" no-prefetch>
             <v-list-item
               color="#1a1a1a"
             >
@@ -30,7 +30,7 @@
 
       <v-btn
         @click="changeTheme"
-        class="theme-changer"
+        class="btn-container__theme-changer"
         icon
       >
         <v-img v-if="$nuxt.$colorMode.preference === 'light'">&#127774</v-img>
@@ -74,28 +74,28 @@ export default {
     justify-content: space-between;
   }
 
-  .logo-text {
+  .header__logo {
     align-self: flex-end;
     margin-bottom: 0.1em;
   }
 
-  .theme-changer {
+  .btn-container__theme-changer {
     align-self: center;
     font-size: 20px;
   }
 
-  .write-button {
+  .btn-container__write-button {
     font-size: 15px;
     letter-spacing: normal;
     text-transform: none;
     color: white;
   }
 
-  .nav-button {
+  .btn-container__nav-button {
     align-self: center;
   }
 
-  .button-container {
+  .header__btn-container {
     justify-content: flex-end;
     align-self: center;
   }

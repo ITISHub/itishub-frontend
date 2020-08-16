@@ -1,22 +1,21 @@
 <template>
-  <div class="content-container">
-    <v-container class="greeting">
-      <h1 class="mb-3 theme-title"> {{ currentLesson.title }} </h1>
-      <div class="video-wrapper">
+    <v-container class="theme">
+      <h1 class="mb-3"> {{ currentLesson.title }} </h1>
+      <div class="theme__video-wrapper wrapper">
         <iframe
           :src="currentLesson.video_url"
-          class="video"
+          class="wrapper__video"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
         </iframe>
       </div>
-      <p class="theme-description mt-5">
+      <p class="mt-5">
         {{ currentLesson.description }}
       </p>
-      <p class="useful-links">
+      <p>
         Полезные ссылки:
       </p>
-      <ul class="list-of-links">
+      <ul class="theme__list-of-links">
         <li
           v-for="link in currentLesson.useful_links"
           :key="link.link"
@@ -32,7 +31,6 @@
         </li>
       </ul>
     </v-container>
-  </div>
 </template>
 
 <script>
@@ -43,6 +41,7 @@
     },
     validate({params}) {
       return /^\d+$/.test(params.theme_algem)
+      // проверять, есть ли в бд данный урок или нет
     },
     // делается для того, чтобы исключить ошибку, когда свойство title берется от undefined, при ручном вводе ID урока
     // в адресную строку, по хорошему нужно убрать этот запрос из логики страницы темы (а может и нет 0_о)
@@ -74,12 +73,17 @@
 </script>
 
 <style scoped>
-  .video-wrapper {
+  .theme {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .theme__video-wrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
     height: 0;
   }
-  .video-wrapper iframe {
+  .theme__video-wrapper iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -87,11 +91,11 @@
     height: 100%;
   }
 
-  .video {
+  .wrapper__video {
     border: 2px solid white;
   }
 
-  .list-of-links {
+  .theme__list-of-links {
     text-align: left;
     text-decoration: none;
   }

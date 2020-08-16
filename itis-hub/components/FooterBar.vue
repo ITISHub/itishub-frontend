@@ -1,15 +1,15 @@
 <template>
   <v-footer absolute id="footer">
-    <v-row class="footer-container">
-      <v-col class="feedback">
-        <h4 class="greet">На связи</h4>
+    <v-row class="footer-bar">
+      <v-col class="footer-bar__feedback feedback">
+        <h4>На связи</h4>
         <p>Нашли баг  или хотите
           с нами связаться? Пишите!
         </p>
         <v-btn
           color="#33aade"
           depressed
-          class="write-button"
+          class="feedback__write-button"
           @click="feedbackDialog = !feedbackDialog"
         >
           написать
@@ -21,8 +21,8 @@
           <FormDialog @close-form="closeForm"/>
         </v-dialog>
       </v-col>
-      <v-col class="social-media">
-        <p class="links-title">мы в соц. сетях</p>
+      <v-col class="footer-bar__social-media social-media">
+        <p class="social-media__links-title">мы в соц. сетях</p>
         <div class="mr-2 mt-n3">
           <v-btn icon href="https://www.youtube.com/channel/UCGLOsuM-8wVEgjGUVIq4taQ" target="_blank">
             <img src="~assets/icons/youtube.svg" alt="youtube" height="42">
@@ -70,24 +70,24 @@ export default {
 </script>
 
 <style scoped>
-  .footer-container {
+  .footer-bar {
     max-width: 650px;
     margin: 0 auto;
   }
 
-  .feedback {
+  .footer-bar__feedback {
     text-align: left;
   }
 
-  .social-media {
+  .footer-bar__social-media {
     text-align: right;
   }
 
-  .links-title {
+  .social-media__links-title {
     font-size: 15px;
   }
 
-  .write-button {
+  .feedback__write-button {
     font-size: 15px;
     letter-spacing: normal;
     text-transform: none;
@@ -95,7 +95,7 @@ export default {
   }
 
   @media screen and (max-width: 431px) {
-    .links-title, .feedback {
+    .social-media__links-title, .footer-bar__feedback {
       font-size: 13px;
     }
   }

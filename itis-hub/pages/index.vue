@@ -32,7 +32,11 @@ export default {
     homecards() {
       return this.$store.getters['homecards/homecards']
     },
-  }
+  },
+  // оптимизация, элемент безопасности
+  // mounted() {
+  //   console.log('Равиль, не ломай сайт пж')
+  // }
 }
 </script>
 

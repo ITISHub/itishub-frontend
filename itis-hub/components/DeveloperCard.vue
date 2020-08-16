@@ -1,14 +1,14 @@
 <template>
-  <div class="developer-content">
+  <div class="developer-card">
 
-    <div class="test-developer mr-2 mt-n1">
-      <div class="child mt-n3 ml-n3" :style="{'background-image': 'url(' + currentBaseUrl +  image + ')' }"></div>
+    <div class="developer-card__image-container image mr-2 mt-n1">
+      <div class="developer-card_image mt-n3 ml-n3" :style="{'background-image': 'url(' + currentBaseUrl +  image + ')' }"></div>
     </div>
 
-    <div class="developer-info">
-      <h4 class="developer-name"> {{ name }} </h4>
+    <div class="developer-card__info">
+      <h4 class="info__name"> {{ name }} </h4>
       <p> {{ duties }} </p>
-      <div class="links mt-n3">
+      <div class="info__links mt-n3">
         <v-btn icon target="_blank" :href="github">
           <img src="~assets/icons/github.svg" alt="github" height="32">
         </v-btn>
@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style scoped>
-  .developer-content {
+  .developer-card {
     max-width: 400px;
     display: flex;
     gap: 30px;
@@ -52,15 +52,7 @@ export default {
     text-align: left;
   }
 
-  .links button {
-    margin-right: -4px;
-  }
-
-  .developer-name {
-    white-space: nowrap;
-  }
-
-  .test-developer {
+  .developer-card__image-container {
     width: 100px;
     height: 100px;
     border: 3px white solid;
@@ -70,11 +62,11 @@ export default {
     overflow: hidden;
   }
 
-  .test-developer:hover {
+  .developer-card__image-container:hover {
     transform: rotate(0deg) translate(20px, 10px);
   }
 
-  .child {
+  .developer-card_image {
     transition: all 0.3s;
     transform: rotate(20deg);
     background-size: cover;
@@ -82,24 +74,33 @@ export default {
     height: 125%;
   }
 
-  .child:hover {
+  .developer-card_image:hover {
     transform: rotate(0deg);
   }
 
+  .info__links button {
+    margin-right: -4px;
+  }
+
+  .info__name {
+    white-space: nowrap;
+  }
+
   @media screen and (max-width: 568px){
-    .developer-name {
+    .info__name {
       font-size: 14px;
     }
 
-    .test-developer {
+    .developer-card__image-container {
       width: 80px;
       height: 80px;
     }
 
-    .child:hover {
+    .developer-card_image:hover {
       transform: rotate(20deg);
     }
-    .test-developer:hover {
+
+    .developer-card__image-container:hover {
       transform: rotate(-20deg);
     }
   }

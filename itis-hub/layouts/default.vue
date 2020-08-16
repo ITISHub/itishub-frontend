@@ -17,12 +17,13 @@
 </script>
 
 <style>
+
   .container {
     max-width: 700px;
   }
 
-  .footer-container {
+  .footer-container{
     min-height: 190px;
-    margin-top: 80px;
+    margin-top: 100px;
   }
 </style>

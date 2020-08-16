@@ -18,12 +18,12 @@
     </v-card-title>
 
     <v-card-text>
-      <v-form class="form-inputs" v-model="isValid" ref="form">
+      <v-form v-model="isValid" ref="form">
         <!--another bad solution, need to refactor this-->
         <template v-if="$nuxt.$colorMode.preference === 'light'">
           <v-text-field
             type="email"
-            class="rounded-lg mt-5 email-input"
+            class="rounded-lg mt-5"
             v-model="email"
             placeholder="email"
             outlined
@@ -45,7 +45,7 @@
         <template v-else>
           <v-text-field
             type="email"
-            class="rounded-lg mt-5 email-input"
+            class="rounded-lg mt-5"
             v-model="email"
             placeholder="email"
             outlined
@@ -73,7 +73,7 @@
       <v-btn
         color="#33aade"
         depressed
-        class="write-button mt-n7"
+        class="feedback-form__write-button mt-n7"
         @click="validateForm"
       >
         отправить
@@ -128,7 +128,7 @@
 </script>
 
 <style scoped>
-  .write-button {
+  .feedback-form__write-button {
     font-size: 15px;
     letter-spacing: normal;
     text-transform: none;

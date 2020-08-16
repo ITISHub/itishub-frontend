@@ -1,15 +1,16 @@
 <template>
-  <v-container class="content-container">
+  <v-container class="content-container discipline">
     <v-container class="greeting">
-      <h1 class="mb-3 discipline-title">Дискретная математика</h1>
+      <h1 class="mb-3 discipline__title">Дискретная Математика</h1>
       <p class="description">теория</p>
       <h4>темы:</h4>
-<!--      <template v-if="getLessons.length === 0">-->
-<!--        <p class="in-development">контент в разработке</p>-->
-<!--      </template>-->
+      <template v-if="lessons.length === 0">
+        <p class="in-development">контент в разработке</p>
+      </template>
     </v-container>
-    <div class="info-container">
+    <div class="discipline__info-container lessons">
       <DynamicCard
+        class="lessons_card"
         v-for="lesson in lessons"
         :key="lesson.id"
         :title="lesson.title"
@@ -17,7 +18,7 @@
         link="/discrete-math-theory/"
       />
     </div>
-    </v-container>
+  </v-container>
 </template>
 
 <script>
@@ -47,31 +48,27 @@
 </script>
 
 <style scoped>
-.content-container {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.info-container {
-  padding-left: 10px;
-  padding-right: 10px;
-  max-width: 700px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-}
-
-.info-container li {
-  margin-bottom: 3px;
-}
-
-.info-container a {
-  margin: 5px;
-}
-
-@media screen and (max-width: 431px){
-  .discipline-title {
-    font-size: 25px;
+  .content-container {
+    max-width: 700px;
+    margin: 0 auto;
   }
-}
+
+  .discipline__info-container {
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  }
+
+  .lessons_card{
+    margin: 5px;
+  }
+
+  @media screen and (max-width: 431px){
+    .discipline__title {
+      font-size: 25px;
+    }
+  }
 </style>
