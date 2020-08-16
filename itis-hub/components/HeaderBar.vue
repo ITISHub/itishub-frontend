@@ -1,6 +1,10 @@
 <template>
   <div class="container header">
-    <h3 class="header__logo">ITIS-hub</h3>
+    <h3 class="header__logo logo">
+      <nuxt-link to="/" class="logo__link">
+        ITIS-hub
+      </nuxt-link>
+    </h3>
     <div class="header__btn-container btn-container mt-4">
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
@@ -77,6 +81,10 @@ export default {
   .header__logo {
     align-self: flex-end;
     margin-bottom: 0.1em;
+  }
+
+  .logo__link {
+    color: var(--color);
   }
 
   .btn-container__theme-changer {
