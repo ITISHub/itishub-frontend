@@ -16,6 +16,7 @@
         :title="lesson.title"
         :lesson-id="lesson.id"
         link="/math-analysis-theory/"
+        title-size="12"
       />
     </div>
   </v-container>

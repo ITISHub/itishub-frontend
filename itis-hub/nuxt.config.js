@@ -5,7 +5,7 @@ export default {
   */
   mode: 'universal',
   env: {
-    baseUrl: 'http://localhost:1337/',
+    baseUrl: 'https://itishub.pythonanywhere.com/',
     courseId: {
       mathAn: 1,
       discreteMath: 2,
