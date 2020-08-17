@@ -39,8 +39,8 @@
     props: {
       lessonInfo: Object,
     },
-    validate({params}) {
-      return /^\d+$/.test(params.theme_discrete)
+    validate({params, store}) {
+      return store.getters['lessons/discreteMathLessons'].some(lesson => lesson.id == params.theme_discrete)
     },
     // делается для того, чтобы исключить ошибку, когда свойство title берется от undefined, при ручном вводе ID урока
     // в адресную строку, по хорошему нужно убрать этот запрос из логики страницы темы (а может и нет 0_о)

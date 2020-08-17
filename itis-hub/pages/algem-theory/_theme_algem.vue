@@ -39,9 +39,8 @@
     props: {
       lessonInfo: Object,
     },
-    validate({params}) {
-      return /^\d+$/.test(params.theme_algem)
-      // проверять, есть ли в бд данный урок или нет
+    validate({params, store}) {
+      return store.getters['lessons/algemLessons'].some(lesson => lesson.id == params.theme_algem)
     },
     // делается для того, чтобы исключить ошибку, когда свойство title берется от undefined, при ручном вводе ID урока
     // в адресную строку, по хорошему нужно убрать этот запрос из логики страницы темы (а может и нет 0_о)
@@ -63,11 +62,12 @@
             return this.lessons[i];
           }
         }
+        return undefined;
       },
       // vue не видит process в html
       baseUrl() {
         return process.env.baseUrl.slice(0, process.env.baseUrl.length - 1)
-      }
+      },
     },
   }
 </script>
