@@ -40,11 +40,13 @@
       lessonInfo: Object,
     },
     async validate({params, store}) {
-      // добавлено, чтобы работали обновления
-      await store.dispatch('lessons/loadLessons', process.env.courseId.alGem);
+      // добавлено, чтобы работали обновления, чекай nuxtServerInit, по хорошему не нужно выносить логику из fetch
+      if (store.getters['lessons/algemLessons'].length === 0) {
+        await store.dispatch('lessons/loadLessons', process.env.courseId.alGem)
+      }
       return store.getters['lessons/algemLessons'].some(lesson => lesson.id == params.theme_algem)
     },
-    // делается для того, чтобы исключить ошибку, когда свойство title берется от undefined, при ручном вводе ID урока
+    // // делается для того, чтобы исключить ошибку, когда свойство title берется от undefined, при ручном вводе ID урока
     // в адресную строку, по хорошему нужно убрать этот запрос из логики страницы темы (а может и нет 0_о)
     async fetch({ store }) {
       // нужно сделать lessons.js более универсальным, для оптимизации (делать меньше запросов)
