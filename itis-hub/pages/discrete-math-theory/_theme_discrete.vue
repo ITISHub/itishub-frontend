@@ -39,7 +39,9 @@
     props: {
       lessonInfo: Object,
     },
-    validate({params, store}) {
+    async validate({params, store}) {
+      // добавлено, чтобы работали обновления
+      await store.dispatch('lessons/loadLessons', process.env.courseId.discreteMath);
       return store.getters['lessons/discreteMathLessons'].some(lesson => lesson.id == params.theme_discrete)
     },
     // делается для того, чтобы исключить ошибку, когда свойство title берется от undefined, при ручном вводе ID урока

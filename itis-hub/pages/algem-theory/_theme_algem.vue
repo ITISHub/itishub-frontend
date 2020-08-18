@@ -39,7 +39,9 @@
     props: {
       lessonInfo: Object,
     },
-    validate({params, store}) {
+    async validate({params, store}) {
+      // добавлено, чтобы работали обновления
+      await store.dispatch('lessons/loadLessons', process.env.courseId.alGem);
       return store.getters['lessons/algemLessons'].some(lesson => lesson.id == params.theme_algem)
     },
     // делается для того, чтобы исключить ошибку, когда свойство title берется от undefined, при ручном вводе ID урока
