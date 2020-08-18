@@ -56,7 +56,7 @@ export default {
     width: 100px;
     height: 100px;
     border: 3px white solid;
-    border-radius: 15px;
+    border-radius: 20px;
     transition: all 0.3s;
     transform: rotate(-20deg);
     overflow: hidden;

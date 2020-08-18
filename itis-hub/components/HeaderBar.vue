@@ -14,7 +14,7 @@
             depressed
             v-bind="attrs"
             v-on="on"
-            class="btn-container__write-button btn-container__nav-button"
+            class="btn-container__write-button btn-container__nav-button nav-button"
             height="30"
             width="55"
           >
@@ -25,6 +25,7 @@
           <nuxt-link v-for="page in pages" :key="page.name" :to="page.link" no-prefetch>
             <v-list-item
               color="#1a1a1a"
+              class="nav-button__link"
             >
               <v-list-item-title>{{ page.name }}</v-list-item-title>
             </v-list-item>
@@ -97,6 +98,14 @@ export default {
     letter-spacing: normal;
     text-transform: none;
     color: white;
+  }
+
+  .nav-button__link {
+    transition: all 0.2s;
+  }
+
+  .nav-button__link:hover {
+    background-color: #d9dce6;
   }
 
   .btn-container__nav-button {
