@@ -90,4 +90,5 @@ a:hover {
   display: grid;
   place-items: center;
   font-size: 30px;
+  text-align: center;
 }
