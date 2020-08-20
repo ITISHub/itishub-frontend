@@ -1,7 +1,7 @@
 <template>
   <div class="developer-card">
 
-    <div class="developer-card__image-container image mr-2 mt-n1">
+    <div class="developer-card__image-container image mr-7 mt-n1">
       <div class="developer-card_image mt-n3 ml-n3" :style="{'background-image': 'url(' + currentBaseUrl +  image + ')' }"></div>
     </div>
 
@@ -47,7 +47,7 @@ export default {
   .developer-card {
     max-width: 400px;
     display: flex;
-    gap: 30px;
+    -ms-flex: auto;
     justify-content: center;
     text-align: left;
   }

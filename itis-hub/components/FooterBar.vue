@@ -35,11 +35,11 @@
             <img src="~assets/icons/telegram.svg" alt="telegram" height="30">
           </v-btn>
         </div>
-        <p class="links-title">oбщайтесь и пишите <br> код вместе с нами</p>
+        <p class="links-title social-media__links-title">oбщайтесь и пишите <br> код вместе с нами</p>
         <div class="mr-2 mt-n3">
           <v-btn icon>
-            <img src="~assets/icons/discord.svg" alt="discord" height="40">
-          </v-btn>
+          <img src="~assets/icons/discord.svg" alt="discord" height="40">
+        </v-btn>
           <v-btn icon href="https://github.com/ITISHub" target="_blank">
             <img src="~assets/icons/github.svg" alt="github" height="36">
           </v-btn>
@@ -85,7 +85,7 @@ export default {
   }
 
   .social-media__links-title {
-    font-size: 15px;
+    font-size: 17px;
   }
 
   .feedback__write-button {

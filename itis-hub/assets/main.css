@@ -56,8 +56,8 @@ a:hover {
 }
 
 /*color of selected text*/
-::selection {background: var(--color); color: var(--bg_color)}
-::-moz-selection {background: var(--color); color: var(--bg_color)}
+::selection {background: #33aade}
+::-moz-selection {background: #33aade}
 
 @media screen and (max-width: 431px){
   .discipline__title, .theme__title {
