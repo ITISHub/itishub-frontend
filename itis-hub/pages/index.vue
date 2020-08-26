@@ -28,15 +28,18 @@ export default {
     }
   },
   computed: {
-    // в props'ах теперь есть creators
     homecards() {
       return this.$store.getters['homecards/homecards']
     },
+    isPosted() {
+      return this.$store.getters['homecards/message']
+    }
   },
-  // оптимизация, элемент безопасности
   created() {
-    console.log('Равиль, не ломай сайт пж')
+    if (!this.isPosted) console.log('Равиль, не ломай сайт пж');
+    this.$store.dispatch('homecards/changeMessage');
   }
+  // оптимизация, элемент безопасности
 }
 </script>
 
