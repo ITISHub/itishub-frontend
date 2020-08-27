@@ -35,11 +35,13 @@ export default {
       return this.$store.getters['homecards/message']
     }
   },
+  
+  // оптимизация, элемент безопасности
+  
   created() {
     if (!this.isPosted) console.log('Равиль, не ломай сайт пж');
     this.$store.dispatch('homecards/changeMessage');
   }
-  // оптимизация, элемент безопасности
 }
 </script>
 

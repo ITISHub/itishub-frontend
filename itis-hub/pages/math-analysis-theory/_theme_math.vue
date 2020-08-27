@@ -14,7 +14,7 @@
     </p>
     <p>
       Полезные ссылки:
-    </p>
+    </p>npm
     <ul class="theme__list-of-links">
       <li
         v-for="link in currentLesson.useful_links"
@@ -25,7 +25,7 @@
         </a>
       </li>
       <li>
-        <a :href="baseUrl + currentLesson.pdf_file" target="_blank">
+        <a :href="currentLesson.pdf_file" target="_blank">
           Конспект &#128196;
         </a>
       </li>
@@ -67,10 +67,6 @@
           }
         }
       },
-      // vue не видит process в html
-      baseUrl() {
-        return process.env.baseUrl.slice(0, process.env.baseUrl.length - 1)
-      }
     },
   }
 </script>
