@@ -28,18 +28,15 @@
           <v-btn icon href="https://www.youtube.com/channel/UCGLOsuM-8wVEgjGUVIq4taQ" target="_blank">
             <img src="~assets/icons/youtube.svg" alt="youtube" height="42">
           </v-btn>
-          <v-btn icon>
-            <img src="~assets/icons/vk.svg" alt="vk" height="30">
-          </v-btn>
-          <v-btn icon>
+          <v-btn icon href ="https://t.me/joinchat/OBSffUvW3m-ANpi7K30sbA" target="_blank">
             <img src="~assets/icons/telegram.svg" alt="telegram" height="30">
           </v-btn>
         </div>
         <p class="links-title social-media__links-title">oбщайтесь и пишите <br> код вместе с нами</p>
         <div class="mr-2 mt-n3">
-          <v-btn icon>
-          <img src="~assets/icons/discord.svg" alt="discord" height="40">
-        </v-btn>
+          <v-btn icon href="https://discord.gg/KuuM9a2" target="_blank">
+            <img src="~assets/icons/discord.svg" alt="discord" height="40">
+          </v-btn>
           <v-btn icon href="https://github.com/ITISHub" target="_blank">
             <img src="~assets/icons/github.svg" alt="github" height="36">
           </v-btn>
