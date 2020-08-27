@@ -68,10 +68,6 @@
         }
         return undefined;
       },
-      // vue не видит process в html
-      baseUrl() {
-        return process.env.baseUrl.slice(0, process.env.baseUrl.length - 1)
-      },
     },
   }
 </script>
