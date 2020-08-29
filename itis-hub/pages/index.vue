@@ -1,8 +1,8 @@
 <template>
   <div class="content-container">
     <v-container class="greeting">
-      <h1 class="mb-3">Welcome to the hub, Buddy</h1>
-      <p class="description">На сайте есть разборы теоретических и практических
+      <h1 class="mb-3 ml-5" id="element"></h1>
+      <p class="greeting__description">На сайте есть разборы теоретических и практических
         задач первого курса ИТИСа, конспекты и прочие полезные материалы
       </p>
     </v-container>
@@ -13,14 +13,12 @@
 <script>
 import HeaderBar from "~/components/HeaderBar.vue";
 import MenuContainer from "../components/MenuContainer";
+import { typeGreeting } from "../plugins/typeMessage"
 
 export default {
   components: {
     MenuContainer,
     HeaderBar,
-  },
-  data() {
-    return {}
   },
   async fetch({ store }) {
     if (store.getters['homecards/homecards'].length === 0) {
@@ -35,13 +33,15 @@ export default {
       return this.$store.getters['homecards/message']
     }
   },
-  
+  mounted() {
+    typeGreeting()
+  },
+
   // оптимизация, элемент безопасности
-  
   created() {
     if (!this.isPosted) console.log('Равиль, не ломай сайт пж');
     this.$store.dispatch('homecards/changeMessage');
-  }
+  },
 }
 </script>
 
@@ -51,7 +51,7 @@ export default {
   margin-top: 2em;
 }
 
-.description {
+.greeting__description {
   max-width: 600px;
   margin: auto;
 }
