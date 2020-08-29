@@ -9,8 +9,8 @@
           allowfullscreen>
         </iframe>
       </div>
-      <p class="mt-5">
-        {{ currentLesson.description }}
+      <p class="mt-5" id="description">
+        <span v-html="currentLesson.description"></span>
       </p>
       <p>
         Полезные ссылки:
@@ -98,5 +98,9 @@
   .theme__list-of-links {
     text-align: left;
     text-decoration: none;
+  }
+
+  #description {
+    text-align: left;
   }
 </style>
