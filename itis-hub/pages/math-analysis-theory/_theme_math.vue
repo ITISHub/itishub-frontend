@@ -14,7 +14,7 @@
     </p>
     <p>
       Полезные ссылки:
-    </p>npm
+    </p>
     <ul class="theme__list-of-links">
       <li
         v-for="link in currentLesson.useful_links"
