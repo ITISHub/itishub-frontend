@@ -41,7 +41,6 @@
       if (store.getters['lessons/mathanLessons'].length === 0) {
         await store.dispatch('lessons/loadLessons', process.env.courseId.mathAn)
       }
-      console.log(store.getters['lessons/mathanLessons'].map(lesson => lesson.id));
     },
     computed: {
       // в props'ах теперь есть lessons
