@@ -4,67 +4,75 @@
       <h1 class="mb-3 discipline__title">Алгебра и Геометрия</h1>
       <p class="description">теория</p>
       <h4>темы:</h4>
-      <template v-if="lessons.length === 0">
-        <p class="in-development">контент в разработке</p>
-      </template>
     </v-container>
-    <div class="discipline__info-container lessons">
-        <DynamicCard
-          class="lessons_card"
-          v-for="lesson in lessons"
-          :key="lesson.id"
-          :title="lesson.title"
-          :lesson-id="lesson.id"
-          link="/algem-theory/"
-        />
+    <v-container v-if="getAlgemLessons.length === 0" class="loading-content">
+      <v-progress-circular
+        :size="50"
+        color="#33aade"
+        indeterminate
+      ></v-progress-circular>
+    </v-container>
+    <div v-else class="discipline__info-container lessons">
+      <DynamicCard
+        v-for="lesson in getAlgemLessons"
+        :key="lesson.id"
+        class="lessons_card"
+        :title="lesson.title"
+        :lesson-id="lesson.id"
+        link="/math-analysis-theory/"
+      />
     </div>
   </v-container>
 </template>
 
 <script>
-  import DynamicCard from "../../components/DynamicCard";
-  export default {
-    name: "algem-theory",
-    components: {DynamicCard},
-    methods: {
-    },
-    async fetch({ store }) {
-      // нужно сделать lessons.js более универсальным, для оптимизации (делать меньше запросов)
-      if (store.getters['lessons/algemLessons'].length === 0) {
-        await store.dispatch('lessons/loadLessons', process.env.courseId.alGem)
-      }
-    },
-    computed: {
-      // в props'ах теперь есть lessons
-      lessons() {
-        return this.$store.getters['lessons/algemLessons']
-      },
-    },
-  }
+import DynamicCard from "../../components/cards/DynamicCard";
+import { mapActions, mapGetters } from "vuex";
+
+export default {
+  name: "AlgemTheory",
+  components: { DynamicCard },
+  async fetch() {
+    await this.loadLessons(process.env.courseId.alGem);
+  },
+  methods: {
+    ...mapActions("lessons", ["loadLessons"]),
+  },
+  computed: {
+    ...mapGetters("lessons", ["getAlgemLessons"]),
+  },
+};
 </script>
 
 <style scoped>
-  .content-container {
-    max-width: 700px;
-    margin: 0 auto;
-  }
+.content-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
 
-  .discipline__info-container {
-    padding-left: 10px;
-    padding-right: 10px;
-    max-width: 700px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  }
+.discipline__info-container {
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+}
 
-  .lessons_card{
-    margin: 5px;
-  }
+.lessons_card {
+  margin: 5px;
+}
 
-  @media screen and (max-width: 431px){
-    .discipline__title {
-      font-size: 25px;
-    }
+.loading-content {
+  width: 100%;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 431px) {
+  .discipline__title {
+    font-size: 25px;
   }
+}
 </style>

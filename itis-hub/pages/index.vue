@@ -1,48 +1,39 @@
 <template>
   <div class="content-container">
     <v-container class="greeting">
-      <h1 class="mb-3 ml-5" id="element"></h1>
-      <p class="greeting__description">На сайте есть разборы теоретических и практических
-        задач первого курса ИТИСа, конспекты и прочие полезные материалы
+      <h1 id="element" class="mb-3 ml-5"></h1>
+      <p class="greeting__description">
+        На сайте есть разборы теоретических и практических задач первого курса
+        ИТИСа, конспекты и прочие полезные материалы.
       </p>
     </v-container>
-    <MenuContainer :menu-elements="homecards"/>
+    <MenuContainer :menu-elements="getHomecards" />
   </div>
 </template>
 
 <script>
-import HeaderBar from "~/components/HeaderBar.vue";
-import MenuContainer from "../components/MenuContainer";
-import { typeGreeting } from "../plugins/typeMessage"
+import MenuContainer from "../components/cards/MenuContainer";
+import { typeGreeting } from "../plugins/typeMessage";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
     MenuContainer,
-    HeaderBar,
   },
-  async fetch({ store }) {
-    if (store.getters['homecards/homecards'].length === 0) {
-      await store.dispatch('homecards/loadHomecards')
-    }
-  },
+  // async fetch() {
+  //   await this.loadHomecards();
+  // },
   computed: {
-    homecards() {
-      return this.$store.getters['homecards/homecards']
-    },
-    isPosted() {
-      return this.$store.getters['homecards/message']
-    }
+    ...mapGetters("homecards", ["getHomecards"]),
   },
-  mounted() {
-    typeGreeting()
-  },
+  // methods: {
+  //   ...mapActions("homecards", ["loadHomecards"]),
+  // },
 
-  // оптимизация, элемент безопасности
-  created() {
-    if (!this.isPosted) console.log('Равиль, не ломай сайт пж');
-    this.$store.dispatch('homecards/changeMessage');
+  mounted() {
+    typeGreeting();
   },
-}
+};
 </script>
 
 <style>

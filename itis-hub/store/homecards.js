@@ -1,29 +1,42 @@
 export const state = () => ({
-  homecards: [],
-  message: false
+  homecards: [
+    {
+      id: 1,
+      title: "education",
+      image: null,
+      url: "/disciplines",
+    },
+    {
+      id: 2,
+      title: "community",
+      image: null,
+      url: "/community",
+    },
+    {
+      id: 3,
+      title: "about",
+      image: null,
+      url: "/about",
+    },
+  ],
 });
 
-export const mutations = {
-  setHomecards(state, courses) {
-    state.homecards = courses
-  },
-  setMessage(state, value) {
-    state.message = value
-  }
+export const getters = {
+  getHomecards: (state) => state.homecards,
 };
 
 export const actions = {
   async loadHomecards({ commit }) {
-    const response = await fetch( process.env.baseUrl + process.env.homecardsAccess);
+    const response = await fetch(
+      process.env.baseUrl + process.env.homecardsAccess
+    );
     let homecards = await response.json();
-    commit('setHomecards', homecards);
+    commit("setHomecards", homecards);
   },
-  changeMessage({ commit }) {
-    commit('setMessage', true)
-  }
 };
 
-export const getters = {
-  homecards: s => s.homecards,
-  message: s => s.message,
+export const mutations = {
+  setHomecards(state, courses) {
+    state.homecards = courses;
+  },
 };

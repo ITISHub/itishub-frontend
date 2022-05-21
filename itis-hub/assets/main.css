@@ -8,6 +8,7 @@
   --color: #000;
   --border_color: #000;
   --footer_color: #e9eaeB;
+  --lighten_bg: #f2f2f2;
 }
 
 .dark-mode {
@@ -15,6 +16,7 @@
   --color: #fff;
   --border_color: #fff;
   --footer_color: #1a1a1a;
+  --lighten_bg: #393f4d;
 }
 
 #application, #feedback-form {
