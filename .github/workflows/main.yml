@@ -34,9 +34,8 @@ jobs:
       - name: Testing
         run: npm run test
 
-      - name: Deploy app on heroku
-        uses: akhileshns/heroku-deploy@v3.4.6
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          heroku_api_key: e90a016b-b53e-4ea5-a8c1-d0e469905d23
-          heroku_app_name: "nuxt-ci"
-          heroku_email: trofimovdanil946@gmail.com
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
