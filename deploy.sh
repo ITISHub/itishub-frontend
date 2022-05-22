@@ -14,7 +14,7 @@ echo 'itis-hub.ru' > CNAME
 
 git init
 git add -A
-git commit -m 'deploy message'
+git commit -m "deploy from ${date + '%H:%M %m/%d/%Y'}"
 
 # push dist to gh-pages
 git push -f git@github.com:ITISHub/itishub-frontend.git master:gh-pages
