@@ -2,6 +2,13 @@
   font-family: Comfortaa;
   src: url("font/Comfortaa-SemiBold.ttf");
 }
+
+@font-face {
+  font-family: Comfortaa;
+  src: url("font/Comfortaa-Bold.ttf");
+  font-weight: bold;
+}
+
 /*themes*/
 :root {
   --bg_color: #fff;
