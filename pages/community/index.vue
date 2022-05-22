@@ -59,7 +59,7 @@ export default {
               avatar: require("~/assets/card-images/speakers/rasim.png"),
               company: "Piano",
               description:
-                "Несколько инструментов DataOps, которые могут вам пригодиться: Flyway, Pecona Toolkit",
+                "Несколько инструментов DataOps, которые могут вам пригодиться: Flyway, Percona Toolkit",
             },
           ],
           link: "https://forms.gle/2SpmruWHj6Ri6nucA",
