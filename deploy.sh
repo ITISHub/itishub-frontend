@@ -9,10 +9,7 @@ cd dist
 # custom domain
 echo 'itis-hub.ru' > CNAME
 
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
-
-timestamp=$(date + '%H:%M %m/%d/%Y')
+timestamp=$(date +%H:%M-%m/%d/%Y)
 
 git init
 git add -A
