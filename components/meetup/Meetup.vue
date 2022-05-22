@@ -20,7 +20,10 @@
           <img :src="speaker.avatar" alt="" />
         </div>
         <div class="speaker-description">
-          <p class="speaker-name">{{ speaker.name }}, {{ speaker.company }}</p>
+          <p class="speaker-name">
+            {{ speaker.name }},
+            <span class="speaker-company">{{ speaker.company }}</span>
+          </p>
           <p>{{ speaker.description }}</p>
         </div>
       </li>
@@ -115,6 +118,10 @@ export default {
 
 .speaker-description {
   width: 60%;
+}
+
+.speaker-company {
+  font-weight: bold;
 }
 
 .meetup-container:hover {
