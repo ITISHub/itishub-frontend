@@ -34,9 +34,3 @@ jobs:
       - name: Testing
         run: npm run test
 
-      - name: Deploy app on heroku
-        uses: akhileshns/heroku-deploy@v3.4.6
-        with:
-          heroku_api_key: e90a016b-b53e-4ea5-a8c1-d0e469905d23
-          heroku_app_name: "nuxt-ci"
-          heroku_email: trofimovdanil946@gmail.com
