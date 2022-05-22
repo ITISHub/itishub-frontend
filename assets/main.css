@@ -47,14 +47,14 @@ a:hover {
     var(--color) 100%
   ) repeat-x 0 100%;
   background-size: 1px 1px;
-  color: var(--color);
+  color: var(--color) !important;
   text-decoration: none;
   transition: background-size .2s;
 }
 
 .theme__list-of-links  a:hover {
   background-size: 1px 50px;
-  color: var(--bg_color);
+  color: var(--bg_color) !important;
 }
 
 /*color of selected text*/
