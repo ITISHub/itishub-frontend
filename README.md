@@ -1,4 +1,4 @@
-# itishub-frontend
+# itishub-frontend 🏳️‍🌈
 Frontend of itis-hub - student developers community of ITIS (Institute of Information Technologies and Intelligent Systems)
 
 ## Run project locally:
