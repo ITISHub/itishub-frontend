@@ -19,6 +19,9 @@
       <v-col class="footer-bar__social-media social-media">
         <p class="social-media__links-title">мы в соц. сетях</p>
         <div class="mr-2 mt-n3">
+          <v-btn icon href="https://vk.com/public198540649" target="_blank">
+            <img src="~assets/icons/vk.svg" alt="youtube" height="28" />
+          </v-btn>
           <v-btn
             icon
             href="https://www.youtube.com/channel/UCGLOsuM-8wVEgjGUVIq4taQ"
