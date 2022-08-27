@@ -22,7 +22,7 @@
         class="lessons_card"
         :title="lesson.title"
         :lesson-id="lesson.id"
-        link="/math-analysis-theory/"
+        link="/discrete-math-theory/"
       />
     </div>
   </v-container>
