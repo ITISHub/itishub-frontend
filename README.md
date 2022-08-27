@@ -34,6 +34,6 @@ We are using [GitHub Pages](https://docs.github.com/en/pages/configuring-a-custo
 
 - create branch named like `issue-<issue_id>-<desription>` or `feature-<description>`
 - create MR with link to the issue or feature description  
-- request for review @danTrofimov
+- request for review [@danTrofimov](https://github.com/DanTrofimov)
 ## Figma
 * [Layouts](https://www.figma.com/file/ZUOg34TnNrrcz21H1WjxeC/ITIS-hub?node-id=0%3A1)

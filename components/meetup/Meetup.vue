@@ -29,7 +29,7 @@
       </li>
     </ul>
     <p v-else class="empty-program-message">В разработке</p>
-    <div class="timepad-info">
+    <div v-if="meetup.active" class="timepad-info">
       <p>Зарегистрироваться на мероприятие можно здесь:</p>
       <v-btn
         color="#33aade"
@@ -62,7 +62,7 @@ export default {
 
 <style>
 .meetup-container {
-  margin-top: 40px;
+  margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 20px;
   transition: background-color 0.5s;

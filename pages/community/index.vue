@@ -63,6 +63,7 @@ export default {
             },
           ],
           link: "https://forms.gle/2SpmruWHj6Ri6nucA",
+          active: false,
         },
       ],
     };

@@ -41,7 +41,11 @@ export default {
       },
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/test-favicons/rainbow.ico" },
+      {
+        rel: "icon",
+        type: "image/x-icon",
+        href: "/itishub-frontend/favicon.ico",
+      },
     ],
   },
   loading: {
