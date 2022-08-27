@@ -22,7 +22,7 @@ export default {
    */
   target: "static",
   router: {
-    base: "/",
+    base: "/itishub-frontend/",
   },
   /*
    ** Headers of the page

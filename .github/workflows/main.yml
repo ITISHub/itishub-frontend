@@ -7,24 +7,30 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-  workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  cd:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [16]
+
     steps:
-      - name: Check-out your repository
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@master
 
-      - name: Install Node.js dependencies
-        run: npm ci
+      - name: Setup node env
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: ${{ matrix.node }}
 
-      - name: Linting
-        run: npm run lint
+      - name: Install dependencies
+        run: npm install
 
-      - name: Testing
-        run: npm run test
-
+      - name: Generate
+        run: npm run generate
+        
+      - name: Deploy
+        run: ./deploy.sh
