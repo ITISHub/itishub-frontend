@@ -65,6 +65,37 @@ export default {
           link: "https://forms.gle/2SpmruWHj6Ri6nucA",
           active: false,
         },
+        {
+          title: "SDA, autumn'22 🍁",
+          date: "23.09.2022",
+          description:
+            "Возвращаемся этой осенью с новым митапом SDA! В программе доклады про Soft Skills, Android- и Backend-разработку.",
+          speakers: [
+            {
+              name: "Азат Гилязов",
+              avatar: require("~/assets/card-images/speakers/azat.png"),
+              company: "Mircod",
+              description:
+                "Расскажу про Jetpack Compose, познакомимся с технологией и ее устройством под капотом",
+            },
+            {
+              name: "Чулпан Хайруллина",
+              avatar: require("~/assets/card-images/speakers/chulpan.png"),
+              company: "Stackers",
+              description:
+                "Work-life balance, что это такое и почему важно его соблюдать",
+            },
+            {
+              name: "Леонид Тыщенко",
+              avatar: require("~/assets/card-images/speakers/lenya.png"),
+              company: "Micord",
+              description:
+                "Micronaut vs Spring, киллер-фичи, разбор контекстов, рассмотрим вместе возможность расширения фреймворков",
+            },
+          ],
+          link: "https://forms.gle/3eAEkEJZtaMGQ1xZ8",
+          active: true,
+        },
       ],
     };
   },
