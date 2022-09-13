@@ -83,14 +83,14 @@ export default {
               avatar: require("~/assets/card-images/speakers/chulpan.png"),
               company: "Stackers",
               description:
-                "Work-life balance, что это такое и почему важно его соблюдать",
+                "Что такое WLB и почему о нем все говорят? Коротко о том, как устроен наш организм, почему важно переключаться на разные сферы и как найти СВОЙ баланс",
             },
             {
               name: "Леонид Тыщенко",
               avatar: require("~/assets/card-images/speakers/lenya.png"),
               company: "Micord",
               description:
-                "Micronaut vs Spring, киллер-фичи, разбор контекстов, рассмотрим вместе возможность расширения фреймворков",
+                "Micronaut vs Spring Boot, киллер-фичи, разбор контекстов, рассмотрим вместе возможность расширения фреймворков",
             },
           ],
           link: "https://forms.gle/3eAEkEJZtaMGQ1xZ8",

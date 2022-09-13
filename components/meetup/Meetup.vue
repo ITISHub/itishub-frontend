@@ -117,7 +117,7 @@ export default {
 }
 
 .speaker-description {
-  width: 60%;
+  width: 65%;
 }
 
 .speaker-company {
