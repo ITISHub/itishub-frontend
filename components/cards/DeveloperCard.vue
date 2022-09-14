@@ -2,7 +2,12 @@
   <div class="developer-card">
     <div class="developer-card__image-container image mr-7 mt-n1">
       <div
-        class="developer-card_image mt-n3 ml-n3"
+        class="mt-n3 ml-n3"
+        :class="
+          !isLoaded
+            ? 'developer-card_image'
+            : 'developer-card_image loaded-developer-card_image'
+        "
         :style="{ 'background-image': 'url(' + currentBaseUrl + image + ')' }"
       ></div>
     </div>
@@ -36,11 +41,21 @@ export default {
     github: String,
     telegram: String,
   },
+  data() {
+    return {
+      isLoaded: false,
+    };
+  },
   computed: {
     currentBaseUrl() {
       // removed last '/' for media files
       return process.env.baseUrl.slice(0, process.env.baseUrl.length - 1);
     },
+  },
+  mounted() {
+    setTimeout(() => {
+      this.isLoaded = true;
+    }, 1000);
   },
 };
 </script>
@@ -62,6 +77,7 @@ export default {
   transition: all 0.3s;
   transform: rotate(-20deg);
   overflow: hidden;
+  background-color: var(--lighten_bg);
 }
 
 .developer-card__image-container:hover {
@@ -74,6 +90,11 @@ export default {
   background-size: cover;
   width: 125%;
   height: 125%;
+  opacity: 0;
+}
+
+.loaded-developer-card_image {
+  opacity: 1;
 }
 
 .developer-card_image:hover {
