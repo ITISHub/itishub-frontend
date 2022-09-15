@@ -39,7 +39,7 @@ export default {
   place-items: center;
   background-color: #385f73;
   transition: all 0.5s;
-  border-radius: 10px !important;
+  border: none;
 }
 
 @media screen and (max-width: 464px) {
