@@ -38,7 +38,7 @@ export default {
   display: grid;
   place-items: center;
   background-color: #385f73;
-  transition: all 0.5s;
+  transition: all 0.3s;
   border: none;
 }
 
