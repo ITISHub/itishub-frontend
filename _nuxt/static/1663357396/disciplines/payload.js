@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/disciplines", {data:[{}],fetch:[{_error:{message:"Only absolute URLs are supported",statusCode:500}}],mutations:[]});
