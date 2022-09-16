@@ -74,6 +74,7 @@ export default {
     "@nuxtjs/vuetify",
     "@nuxtjs/color-mode",
     "@nuxtjs/pwa",
+    "@nuxtjs/dotenv",
   ],
   /*
    ** Nuxt.js modules
