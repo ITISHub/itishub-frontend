@@ -1,4 +1,6 @@
 # itishub-frontend 🏳️‍🌈
+[![deploy](https://github.com/ITISHub/itishub-frontend/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/ITISHub/itishub-frontend/actions/workflows/main.yml)
+
 Frontend of itis-hub - student developers community of ITIS (Institute of Information Technologies and Intelligent Systems)
 
 ## Run project locally:

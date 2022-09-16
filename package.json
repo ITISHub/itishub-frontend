@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^1.0.0",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/vuetify": "^1.11.3",
     "bootstrap-vue": "^2.15.0",
     "eslint-plugin-prettier-vue": "^3.0.0",
