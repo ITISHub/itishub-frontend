@@ -14,7 +14,6 @@ export const actions = {
       process.env.baseUrl + process.env.creatorsAccess
     );
     let creators = await response.json();
-    console.log(creators)
     commit("setCreators", creators);
   },
 };
