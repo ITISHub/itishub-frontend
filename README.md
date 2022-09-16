@@ -25,6 +25,12 @@ Start project locally at `localhost:3000` by default:
 npm run dev
 ```
 
+## Environment variables
+
+| Name  | Description  |
+|---|---|
+| BASE_URL  | API URL |
+
 ## Related docs links
 * [Vue.js Documentation](https://vuejs.org/v2/guide/)
 * [Nuxt.js Documentation](https://ru.nuxtjs.org/guide)
