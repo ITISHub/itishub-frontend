@@ -5,7 +5,8 @@ export default {
    */
   mode: "universal",
   env: {
-    baseUrl: "https://itishub.pythonanywhere.com/",
+    baseUrl: process.env.BASE_URL,
+    // TODO: get ids from API
     courseId: {
       mathAn: 1,
       discreteMath: 2,
