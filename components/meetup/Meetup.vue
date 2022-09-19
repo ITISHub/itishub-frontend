@@ -64,7 +64,7 @@ export default {
 .meetup-container {
   margin-top: 10px;
   margin-bottom: 10px;
-  border-radius: 20px;
+  border-radius: 10px;
   transition: background-color 0.5s;
   padding: 15px;
 }
