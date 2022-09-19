@@ -40,6 +40,6 @@ We are using [GitHub Pages](https://docs.github.com/en/pages/configuring-a-custo
 
 ## Contribution guide
 
-See `CONTRIBUTING.md`
+See [`CONTRIBUTING.md`](https://github.com/ITISHub/itishub-frontend/blob/master/CONTRIBUTING.md)
 ## Figma
 * [Layouts](https://www.figma.com/file/ZUOg34TnNrrcz21H1WjxeC/ITIS-hub?node-id=0%3A1)
