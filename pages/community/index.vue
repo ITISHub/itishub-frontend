@@ -46,6 +46,8 @@ export default {
               company: "Sbermarket",
               description:
                 "Кто такой FrontOps? Расскажу про команду платформы фронтенда",
+              slides:
+                "https://docs.google.com/presentation/d/1eeDpo9tHFd_ssuYdE9okoooqpJAzf84kwungoqRynLU/edit?usp=sharing",
             },
             {
               name: "Аделя Сабирзянова",
@@ -53,6 +55,8 @@ export default {
               company: "Tinkoff",
               description:
                 "Почему важен системный анализ? Расскажу про Системную аналитику в команде лояльности",
+              slides:
+                "https://docs.google.com/presentation/d/1-CZzxIFvvNMK5iOhWzfCIzaGwO28wtb2mv0T9pEnDEA/edit?usp=sharing",
             },
             {
               name: "Расим Гарипов",
@@ -60,6 +64,7 @@ export default {
               company: "Piano",
               description:
                 "Несколько инструментов DataOps, которые могут вам пригодиться: Flyway, Pecona Toolkit",
+              slides: "https://files.sberdisk.ru/s/zHdNrx4Ag6ocYKo",
             },
           ],
           link: "https://forms.gle/2SpmruWHj6Ri6nucA",
@@ -77,6 +82,8 @@ export default {
               company: "Mircod",
               description:
                 "Расскажу про Jetpack Compose, познакомимся с технологией и ее устройством под капотом",
+              slides:
+                "https://docs.google.com/presentation/d/1btIrFLbKHCba8ntYQf3eQjQemxgu9bCSo_q4SqD6KB4/edit?usp=sharing",
             },
             {
               name: "Чулпан Хайруллина",
@@ -84,6 +91,8 @@ export default {
               company: "Stackers",
               description:
                 "Что такое WLB и почему о нем все говорят? Коротко о том, как устроен наш организм, почему важно переключаться на разные сферы и как найти СВОЙ баланс",
+              slides:
+                "https://docs.google.com/presentation/d/1WHodTj3m2hmdbgMb0lOgrVx6CGXAj430_cjRJ1Gp63w/edit?usp=sharing",
             },
             {
               name: "Леонид Тыщенко",
@@ -91,10 +100,12 @@ export default {
               company: "Micord",
               description:
                 "Micronaut vs Spring Boot, киллер-фичи, разбор контекстов, рассмотрим вместе возможность расширения фреймворков",
+              slides:
+                "https://docs.google.com/presentation/d/144Ty2tf4vThPFpLarzSVUEZ12H0MYQmh/edit?usp=sharing&ouid=107955849639318665979&rtpof=true&sd=true",
             },
           ],
           link: "https://forms.gle/3eAEkEJZtaMGQ1xZ8",
-          active: true,
+          active: false,
         },
       ],
     };
