@@ -25,6 +25,9 @@
             <span class="speaker-company">{{ speaker.company }}</span>
           </p>
           <p>{{ speaker.description }}</p>
+          <a :href="speaker.slides" target="_blank" class="slides-link"
+            >слайды</a
+          >
         </div>
       </li>
     </ul>
@@ -62,11 +65,11 @@ export default {
 
 <style>
 .meetup-container {
-  margin-top: 10px;
+  margin-top: 10px !important;
   margin-bottom: 10px;
   border-radius: 10px;
   transition: background-color 0.5s;
-  padding: 15px;
+  padding: 15px 15px 5px 15px;
 }
 
 .meetup-title {
@@ -124,8 +127,23 @@ export default {
   font-weight: bold;
 }
 
-.meetup-container:hover {
+/* .meetup-container:hover {
   background-color: var(--lighten_bg);
+} */
+
+.slides-link {
+  color: #000 !important;
+  background-color: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+  transition: border-radius 0.3s;
+  border: 1px #bcbcbc solid;
+}
+
+.slides-link:hover {
+  background-color: #bbb9b9;
+  border: 1px #bcbcbc solid;
 }
 
 .timepad-info {
@@ -134,6 +152,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+  padding-bottom: 5px;
 }
 
 .timepad-info > p {
@@ -144,7 +163,7 @@ export default {
   font-size: 15px;
   letter-spacing: normal;
   text-transform: none;
-  color: white !important;
+  color: #fff !important;
 }
 
 @media screen and (max-width: 568px) {
