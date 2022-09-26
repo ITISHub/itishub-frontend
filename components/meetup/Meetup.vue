@@ -65,10 +65,12 @@
     </div>
     <v-snackbar
       v-model="showFlash"
-      timeout="2000"
+      timeout="2500"
       content-class="flash-content"
       outlined
       dark
+      :min-width="200"
+      class="mb-5"
     >
       ссылка скопирована в буфер 👍
     </v-snackbar>
@@ -76,6 +78,8 @@
 </template>
 
 <script>
+import confetti from "canvas-confetti";
+
 export default {
   name: "Meetup",
   props: {
@@ -99,9 +103,31 @@ export default {
         process.env.hostUrl + $nuxt.$route.path + "#" + this.meetup.anchor
       );
       this.showFlash = true;
-    },
-    onClickCloseFlash() {
-      this.showFlash = false;
+
+      var end = Date.now() + 0.7 * 1000;
+
+      var colors = ["#33aade", "#ffffff"];
+
+      (function frame() {
+        confetti({
+          particleCount: 2,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+          colors: colors,
+        });
+        confetti({
+          particleCount: 2,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+          colors: colors,
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
     },
   },
 };
@@ -224,7 +250,6 @@ export default {
 .flash-content {
   display: flex;
   justify-content: center;
-  width: 200px !important;
 }
 
 @media screen and (max-width: 568px) {
