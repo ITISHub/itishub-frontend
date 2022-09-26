@@ -1,7 +1,25 @@
 <template>
-  <li class="meetup-container">
-    <h2 class="meetup-title">{{ meetup.title }}</h2>
-    <p>{{ meetup.date }}</p>
+  <li
+    class="meetup-container"
+    v-on:mouseover="onMeetupHover"
+    v-on:mouseleave="onMeetupLeave"
+  >
+    <h2 :id="meetup.anchor" class="meetup-title">
+      {{ meetup.title }}
+    </h2>
+    <p>
+      {{ meetup.date }}
+      <v-btn
+        :class="
+          isMeetupHover ? 'meetup-link' : 'meetup-link meetup-link__title-hover'
+        "
+        icon
+        color="grey"
+        @click="onCopyClick"
+      >
+        🔗
+      </v-btn>
+    </p>
     <p>{{ meetup.description }}</p>
     <h3 class="meetup-program-title">Программа митапа:</h3>
     <ul class="meetup-program" v-if="meetup.speakers.length > 0">
@@ -45,6 +63,15 @@
         записаться
       </v-btn>
     </div>
+    <v-snackbar
+      v-model="showFlash"
+      timeout="2000"
+      content-class="flash-content"
+      outlined
+      dark
+    >
+      ссылка скопирована в буфер 👍
+    </v-snackbar>
   </li>
 </template>
 
@@ -54,10 +81,27 @@ export default {
   props: {
     meetup: Object,
   },
-  computed: {
-    currentBaseUrl() {
-      // removed last '/' for media files
-      return process.env.baseUrl.slice(0, process.env.baseUrl.length - 1);
+  data() {
+    return {
+      isMeetupHover: false,
+      showFlash: false,
+    };
+  },
+  methods: {
+    onMeetupHover() {
+      this.isMeetupHover = true;
+    },
+    onMeetupLeave() {
+      this.isMeetupHover = false;
+    },
+    async onCopyClick() {
+      await navigator.clipboard.writeText(
+        process.env.hostUrl + $nuxt.$route.path + "#" + this.meetup.anchor
+      );
+      this.showFlash = true;
+    },
+    onClickCloseFlash() {
+      this.showFlash = false;
     },
   },
 };
@@ -74,6 +118,17 @@ export default {
 
 .meetup-title {
   font-size: 30px;
+}
+
+.meetup-link {
+  opacity: 1;
+  transition: opacity 0.3s;
+  border-radius: 50%;
+  font-size: 25px !important;
+}
+
+.meetup-link__title-hover {
+  opacity: 0;
 }
 
 .empty-program-message {
@@ -164,6 +219,12 @@ export default {
   letter-spacing: normal;
   text-transform: none;
   color: #fff !important;
+}
+
+.flash-content {
+  display: flex;
+  justify-content: center;
+  width: 200px !important;
 }
 
 @media screen and (max-width: 568px) {

@@ -35,6 +35,7 @@ export default {
       // move to API
       meetups: [
         {
+          anchor: "pilot",
           title: "SDA, пилотный митап",
           date: "03.06.2022",
           description:
@@ -71,6 +72,7 @@ export default {
           active: false,
         },
         {
+          anchor: "autumn22",
           title: "SDA, autumn'22 🍁",
           date: "23.09.2022",
           description:
