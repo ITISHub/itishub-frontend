@@ -30,6 +30,7 @@ npm run dev
 | Name  | Description  |
 |---|---|
 | BASE_URL  | API URL |
+| HOST_URL  | Current deploy URL |
 
 ## Related docs links
 * [Vue.js Documentation](https://vuejs.org/v2/guide/)
