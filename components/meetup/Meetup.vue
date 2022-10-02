@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import confetti from "canvas-confetti";
+import { showConfetti } from "../../plugins/showConfetti";
 
 export default {
   name: "Meetup",
@@ -104,30 +104,10 @@ export default {
       );
       this.showFlash = true;
 
-      var end = Date.now() + 0.7 * 1000;
+      let END = Date.now() + 0.3 * 1000;
+      let COLORS = ["#33aade", "#ffffff"];
 
-      var colors = ["#33aade", "#ffffff"];
-
-      (function frame() {
-        confetti({
-          particleCount: 2,
-          angle: 60,
-          spread: 55,
-          origin: { x: 0 },
-          colors: colors,
-        });
-        confetti({
-          particleCount: 2,
-          angle: 120,
-          spread: 55,
-          origin: { x: 1 },
-          colors: colors,
-        });
-
-        if (Date.now() < end) {
-          requestAnimationFrame(frame);
-        }
-      })();
+      showConfetti(COLORS, END);
     },
   },
 };

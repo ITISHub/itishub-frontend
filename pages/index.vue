@@ -20,16 +20,9 @@ export default {
   components: {
     MenuContainer,
   },
-  // async fetch() {
-  //   await this.loadHomecards();
-  // },
   computed: {
     ...mapGetters("homecards", ["getHomecards"]),
   },
-  // methods: {
-  //   ...mapActions("homecards", ["loadHomecards"]),
-  // },
-
   mounted() {
     typeGreeting();
   },
