@@ -1,7 +1,7 @@
 <template>
   <div class="container header">
     <h3 class="header__logo logo">
-      <nuxt-link to="/" class="logo__link"> ITIS-hub</nuxt-link>
+      <nuxt-link to="/" class="logo__link"> ITIS-hub </nuxt-link>
     </h3>
     <div class="header__btn-container btn-container mt-4">
       <v-menu offset-y>
@@ -33,21 +33,11 @@
         </v-list>
       </v-menu>
 
-      <v-btn
-        v-if="$nuxt.$colorMode.value === 'light'"
-        class="btn-container__theme-changer"
-        icon
-        @click="applyDarkTheme"
-      >
-        <v-img> &#127774; </v-img>
-      </v-btn>
-      <v-btn
-        v-if="$nuxt.$colorMode.value === 'dark'"
-        class="btn-container__theme-changer"
-        icon
-        @click="applyLightTheme"
-      >
-        <v-img> &#x1F31B; </v-img>
+      <v-btn class="btn-container__theme-changer" icon @click="changeTheme">
+        <v-img v-if="$nuxt.$colorMode.preference === 'light'">
+          &#127774;
+        </v-img>
+        <v-img v-else> &#x1F31B; </v-img>
       </v-btn>
     </div>
   </div>
@@ -66,12 +56,20 @@ export default {
       ],
     };
   },
+  // move to vuex
   methods: {
-    applyLightTheme() {
-      $nuxt.$colorMode.value = "light";
-    },
-    applyDarkTheme() {
-      $nuxt.$colorMode.value = "dark";
+    changeTheme() {
+      switch ($nuxt.$colorMode.preference) {
+        case "light":
+          $nuxt.$colorMode.preference = "dark";
+          break;
+        case "dark":
+          $nuxt.$colorMode.preference = "light";
+          break;
+        default:
+          $nuxt.$colorMode.preference = "dark";
+          break;
+      }
     },
   },
 };
