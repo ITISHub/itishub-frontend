@@ -16,6 +16,8 @@
   --border_color: #000;
   --footer_color: #e9eaeB;
   --lighten_bg: #f2f2f2;
+  --scrollbar_bg: #fff;
+  --thumb_bg: #33aade;
 }
 
 .dark-mode {
@@ -24,6 +26,8 @@
   --border_color: #fff;
   --footer_color: #1a1a1a;
   --lighten_bg: #393f4d;
+  --scrollbar_bg: #393f4d;
+  --thumb_bg: #33aade;
 }
 
 #application, #feedback-form {
@@ -31,6 +35,24 @@
   background-color: var(--bg_color);
   color: var(--color);
   transition: background-color 0.5s;
+}
+
+body::-webkit-scrollbar {
+  width: 14px;
+}
+
+body {
+  scrollbar-color: var(--thumb_bg) var(--scrollbar_bg);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--scrollbar_bg);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumb_bg) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbar_bg);
 }
 
 .card-container {
