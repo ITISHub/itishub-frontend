@@ -236,6 +236,13 @@ export default {
   .meetup-title {
     font-size: 25px;
   }
+
+  .meetup-link {
+    opacity: 1;
+    transition: opacity 0.3s;
+    border-radius: 50%;
+    font-size: 25px !important;
+  }
 }
 
 @media screen and (max-width: 390px) {
