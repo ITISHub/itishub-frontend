@@ -33,11 +33,31 @@
         </v-list>
       </v-menu>
 
-      <v-btn class="btn-container__theme-changer" icon @click="changeTheme">
-        <v-img v-if="$nuxt.$colorMode.preference === 'light'">
-          &#127774;
-        </v-img>
-        <v-img v-else> &#x1F31B; </v-img>
+      <v-btn
+        v-if="$nuxt.$colorMode.preference === 'light'"
+        class="btn-container__theme-changer"
+        icon
+        @click="applyDarktheme"
+      >
+        <v-img> &#127774; </v-img>
+      </v-btn>
+
+      <v-btn
+        v-if="$nuxt.$colorMode.preference === 'dark'"
+        class="btn-container__theme-changer"
+        icon
+        @click="applySystemTheme"
+      >
+        <v-img> &#x1F31B; </v-img>
+      </v-btn>
+
+      <v-btn
+        v-if="$nuxt.$colorMode.preference === 'system'"
+        class="btn-container__theme-changer"
+        icon
+        @click="applyLightTheme"
+      >
+        <v-img> &#128421;&#65039; </v-img>
       </v-btn>
     </div>
   </div>
@@ -56,20 +76,15 @@ export default {
       ],
     };
   },
-  // move to vuex
   methods: {
-    changeTheme() {
-      switch ($nuxt.$colorMode.preference) {
-        case "light":
-          $nuxt.$colorMode.preference = "dark";
-          break;
-        case "dark":
-          $nuxt.$colorMode.preference = "light";
-          break;
-        default:
-          $nuxt.$colorMode.preference = "dark";
-          break;
-      }
+    applyLightTheme() {
+      $nuxt.$colorMode.preference = "light";
+    },
+    applyDarktheme() {
+      $nuxt.$colorMode.preference = "dark";
+    },
+    applySystemTheme() {
+      $nuxt.$colorMode.preference = "system";
     },
   },
 };

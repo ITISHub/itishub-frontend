@@ -16,6 +16,7 @@
   --border_color: #000;
   --footer_color: #e9eaeB;
   --lighten_bg: #f2f2f2;
+  --scroll_thumb_color: #33aade;
 }
 
 .dark-mode {
@@ -31,6 +32,19 @@
   background-color: var(--bg_color);
   color: var(--color);
   transition: background-color 0.5s;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg_color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll_thumb_color);
+  border-radius: 10px;
 }
 
 .card-container {
