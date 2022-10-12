@@ -22,15 +22,15 @@ jobs:
 
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@master
 
       - name: Setup node env
         uses: actions/setup-node@v2.1.2
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Install Node.js dependencies
-        run: npm ci
+      - name: Install dependencies
+        run: npm install
 
       - name: Run linters
         uses: wearerequired/lint-action@v2
