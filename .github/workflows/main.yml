@@ -27,10 +27,12 @@ jobs:
 
       - name: Generate
         run: npm run generate
-        
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          HOST_URL: ${{ secrets.HOST_URL }}        
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-

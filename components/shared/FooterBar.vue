@@ -45,7 +45,11 @@
           <v-btn icon href="https://discord.gg/KuuM9a2" target="_blank">
             <img src="~assets/icons/discord.svg" alt="discord" height="40" />
           </v-btn>
-          <v-btn icon href="https://github.com/ITISHub/itishub-frontend" target="_blank">
+          <v-btn
+            icon
+            href="https://github.com/ITISHub/itishub-frontend"
+            target="_blank"
+          >
             <img src="~assets/icons/github.svg" alt="github" height="36" />
           </v-btn>
         </div>
