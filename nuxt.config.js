@@ -46,7 +46,7 @@ export default {
       {
         rel: "icon",
         type: "image/x-icon",
-        href: "/itishub-frontend/favicon.ico",
+        href: "/itishub-frontend/blue_circle.png",
       },
     ],
   },
