@@ -1,4 +1,5 @@
-# itishub-frontend 🏳️‍🌈
+# itishub-frontend 🧑‍💻
+
 [![deploy](https://github.com/ITISHub/itishub-frontend/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/ITISHub/itishub-frontend/actions/workflows/main.yml) [![lint](https://github.com/ITISHub/itishub-frontend/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/ITISHub/itishub-frontend/actions/workflows/lint.yml)
 
 Frontend of itis-hub - student developers community of ITIS (Institute of Information Technologies and Intelligent Systems)
