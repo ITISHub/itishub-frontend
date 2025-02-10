@@ -24,7 +24,7 @@
           </v-btn>
           <v-btn
             icon
-            href="https://www.youtube.com/channel/UCGLOsuM-8wVEgjGUVIq4taQ"
+            href="https://www.youtube.com/@itishub333/videos"
             target="_blank"
           >
             <img src="~assets/icons/youtube.svg" alt="youtube" height="42" />
