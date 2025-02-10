@@ -29,22 +29,12 @@
           >
             <img src="~assets/icons/youtube.svg" alt="youtube" height="42" />
           </v-btn>
-          <v-btn
-            icon
-            href="https://t.me/joinchat/OBSffUvW3m-ANpi7K30sbA"
-            target="_blank"
-          >
-            <img src="~assets/icons/telegram.svg" alt="telegram" height="30" />
-          </v-btn>
         </div>
         <p class="links-title social-media__links-title">
           oбщайтесь и пишите <br />
           код вместе с нами
         </p>
         <div class="mr-2 mt-n3">
-          <v-btn icon href="https://discord.gg/KuuM9a2" target="_blank">
-            <img src="~assets/icons/discord.svg" alt="discord" height="40" />
-          </v-btn>
           <v-btn
             icon
             href="https://github.com/ITISHub/itishub-frontend"
