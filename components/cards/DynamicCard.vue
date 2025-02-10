@@ -1,5 +1,5 @@
 <template>
-  <a @click="openLink(link, lessonId)">
+  <a @click="openLink(link, lessonId, target)">
     <v-card class="card">
       <p class="card__title" :style="{ 'font-size': titleSize + 'px' }">
         {{ title }}
@@ -20,9 +20,14 @@ export default {
     // navigation props
     lessonId: Number,
     link: String,
+    target: String,
   },
   methods: {
-    openLink(link, lessonId) {
+    openLink(link, lessonId, target) {
+      if (target == "__blank") {
+        window.open(link, '_blank').focus();
+        return
+      }
       if (lessonId === undefined) {
         this.$router.push(link);
       } else this.$router.push(link + lessonId);
@@ -57,6 +62,6 @@ export default {
 }
 
 .card:hover {
-  background-color: #4789a2;
+  background-color: #4789a2 !important;
 }
 </style>

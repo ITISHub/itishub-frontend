@@ -8,7 +8,7 @@
             ? 'developer-card_image'
             : 'developer-card_image loaded-developer-card_image'
         "
-        :style="{ 'background-image': 'url(' + currentBaseUrl + image + ')' }"
+        :style="{ 'background-image': 'url(' + avatar + ')' }"
       ></div>
     </div>
 
@@ -22,9 +22,6 @@
         <v-btn icon target="_blank" :href="telegram">
           <img src="~assets/icons/telegram.svg" alt="telegram" height="30" />
         </v-btn>
-        <v-btn icon target="_blank" :href="vk">
-          <img src="~assets/icons/vk.svg" alt="vk" height="30" />
-        </v-btn>
       </div>
     </div>
   </div>
@@ -34,10 +31,9 @@
 export default {
   name: "DeveloperCard",
   props: {
-    image: String,
+    avatar: String,
     name: String,
     duties: String,
-    vk: String,
     github: String,
     telegram: String,
   },
@@ -45,12 +41,6 @@ export default {
     return {
       isLoaded: false,
     };
-  },
-  computed: {
-    currentBaseUrl() {
-      // removed last '/' for media files
-      return process.env.baseUrl.slice(0, process.env.baseUrl.length - 1);
-    },
   },
   mounted() {
     setTimeout(() => {
